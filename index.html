@@ -852,10 +852,15 @@ const SEM_POR_MES = 13/3;
 const ALL_VIEWS=['v-home','v-perfil','v-sorteio','v-configs','v-idioma','v-editperfil','v-copiloto','v-ganho','v-camera','lf-intro','lf-wizard','lf-loading','lf-result','lf-edit-calc','v-demo','v-historico'];
 
 function _autoSaveAndGoBack(){
-  // Se tiver dados calculados, salva automaticamente antes de sair
+  // Se tiver dados calculados, salva o custo/km automaticamente (sem aplicar no semáforo)
   if(calcData && Object.keys(calcData).length>0 && calcData.custoPorKm>0){
-    _applyLucroResult(calcData);
-    showToast('✅ Lucro salvo automaticamente!');
+    // Salva o estado do Lucro Líquido (custo/km visível, botões Editar+Detalhes)
+    document.getElementById('lucro-state-none').style.display='none';
+    document.getElementById('lucro-state-done').style.display='block';
+    document.getElementById('lucro-custo-km-val').textContent='R$ '+fmt2(calcData.custoPorKm)+'/km';
+    // Libera indicadores de Lucro em Aparência
+    renderIndicators();
+    showToast('✅ Lucro salvo!');
   }
   go('v-ganho');
 }
@@ -983,11 +988,15 @@ function calcular(){
   const lucroMes=brutoMes-custsTotalMes;
   const margemPct=brutoMes>0?Math.round(lucroMes/brutoMes*1000)/10:0;
   const custoDia=custsTotalMes/diasMes;
+  // Arredondar para múltiplo de 0.05 (step do slider $/km)
+  function round05(v){return Math.round(v/0.05)*0.05;}
+  const ganhoPorKmRaw=kmDia>0?brutoDia/kmDia:0;
+  const custoPorKmRaw=kmDia>0?custoDia/kmDia:0;
   return{
     diasSem,horasDia,kmDia,metaSem,brutoDia,brutoMes,
     custsTotalMes,lucroMes,margemPct,
-    ganhoPorKm:kmDia>0?brutoDia/kmDia:0,
-    custoPorKm:kmDia>0?custoDia/kmDia:0,
+    ganhoPorKm:round05(ganhoPorKmRaw),
+    custoPorKm:round05(custoPorKmRaw),
     ganhoPorHr:horasDia>0?brutoDia/horasDia:0,
     custoPorHr:horasDia>0?custoDia/horasDia:0,
     custoCombMes,financMes,manutMes,segMes,outrosMes,ipvaMes
@@ -1153,9 +1162,20 @@ function ecClose(){
 
 function ecReset(){
   Object.assign(D,{diasSemana:null,horasDia:null,kmDia:null,metaSemanal:null,veiculo:'carro',categorias:[],status:null,financiamento:null,manutencao:null,seguro:null,outrosCustos:'0',ipva:null,combustivel:'gasolina',autonomia:null,precoCombustivel:null});
+  // Zera o calcData (sem cálculo de lucro)
+  calcData = {};
   // Reseta o bloco Lucro Líquido para o botão laranja original
   document.getElementById('lucro-state-none').style.display='block';
   document.getElementById('lucro-state-done').style.display='none';
+  // Remover da seleção qualquer indicador que dependa de Lucro Líquido
+  var lucroKeys = ['Lucro','Lucro %','Lucro /Hora'];
+  selected = selected.filter(function(k){ return lucroKeys.indexOf(k) === -1; });
+  // Se selected ficou vazio ou precisar de padrão, restaura padrão
+  if(selected.length === 0){
+    selected = ['$/Km','$/Hora','Nota'];
+  }
+  // Atualiza UI de aparência (bloqueia e reflete a seleção)
+  renderIndicators();
   ecRenderAll();
   showToast('↺ Dados resetados!');
   go('v-ganho');
@@ -1275,8 +1295,9 @@ function ecRecalc(){
   const ipva=parseFloat(document.getElementById('ec-ipva')?.value||D.ipva)||0;
   const totalMes=custoCombMes+financ+manut+seguro+outros+ipva/12;
   const custoPorKm=kmMes>0?totalMes/kmMes:0;
+  const custoPorKmRnd=Math.round(custoPorKm/0.05)*0.05;
   const el=document.getElementById('ec-footer-val');
-  if(el) el.textContent='R$ '+custoPorKm.toFixed(2).replace('.',',')+' /km';
+  if(el) el.textContent='R$ '+custoPorKmRnd.toFixed(2).replace('.',',')+' /km';
 }
 
 function ecSave(){
