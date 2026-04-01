@@ -594,7 +594,7 @@ input[type=range]{width:100%;accent-color:#FF5900;}
 <div class="vw hidden" id="lf-result">
   <div class="top-bar"><span>21:44</span><span>71%</span></div>
   <div class="res-hdr">
-    <span style="font-size:22px;cursor:pointer;" onclick="go('v-ganho')">←</span>
+    <span style="font-size:22px;cursor:pointer;" onclick="_autoSaveAndGoBack()">←</span>
     <span class="res-hdr-title">Detalhes</span>
     <span style="font-size:18px;color:#444;cursor:pointer;margin-left:8px;" onclick="openEditCalc()">✏️</span>
     <span style="font-size:18px;color:#444;cursor:pointer;margin-left:12px;">↗</span>
@@ -702,8 +702,10 @@ input[type=range]{width:100%;accent-color:#FF5900;}
   <!-- VIEWER fullscreen (por cima da galeria) -->
   <div id="demo-viewer" style="display:none;position:absolute;top:0;left:0;right:0;bottom:0;z-index:25;background:#000;flex-direction:column;">
 
-    <!-- CARD NO TOPO — aparece após 1s -->
-    <div id="demo-top-card" style="display:none;position:absolute;top:0;left:0;right:0;z-index:30;padding:0;"></div>
+    <!-- CARD — aparece após 1s, posição e tema seguem Aparência -->
+    <div id="demo-top-card" style="display:none;position:absolute;top:10px;left:0;right:0;z-index:30;flex-direction:row;">
+      <!-- conteúdo gerado por _showCard() via demo-card-inner -->
+    </div>
 
     <!-- Botão fechar -->
     <button onclick="closeRideViewer()" style="position:absolute;top:10px;right:10px;z-index:35;background:rgba(0,0,0,0.65);border:none;border-radius:50%;width:34px;height:34px;color:white;font-size:16px;cursor:pointer;line-height:34px;text-align:center;">✕</button>
@@ -832,6 +834,15 @@ input[type=range]{width:100%;accent-color:#FF5900;}
 const SEM_POR_MES = 13/3;
 
 const ALL_VIEWS=['v-home','v-perfil','v-sorteio','v-configs','v-idioma','v-editperfil','v-copiloto','v-ganho','v-camera','lf-intro','lf-wizard','lf-loading','lf-result','lf-edit-calc','v-demo'];
+
+function _autoSaveAndGoBack(){
+  // Se tiver dados calculados, salva automaticamente antes de sair
+  if(calcData && Object.keys(calcData).length>0 && calcData.custoPorKm>0){
+    _applyLucroResult(calcData);
+    showToast('✅ Lucro salvo automaticamente!');
+  }
+  go('v-ganho');
+}
 
 function go(id){
   ALL_VIEWS.forEach(v=>document.getElementById(v).classList.toggle('hidden',v!==id));
@@ -1075,12 +1086,25 @@ function showConfirmModal(){
 }
 function closeModal(){document.getElementById('modal-confirm').classList.add('hidden');}
 
+function _applyLucroResult(R){
+  // Aplica resultado do cálculo (base, sem simulação)
+  sc.km.hi=parseFloat(R.ganhoPorKm.toFixed(2));
+  sc.km.lo=parseFloat((R.ganhoPorKm*0.8).toFixed(2));
+  sc.hr.hi=parseFloat(R.ganhoPorHr.toFixed(2));
+  sc.hr.lo=parseFloat((R.ganhoPorHr*0.8).toFixed(2));
+  renderSlider('km');renderSlider('hr');
+  document.getElementById('lucro-state-none').style.display='none';
+  document.getElementById('lucro-state-done').style.display='block';
+  document.getElementById('lucro-custo-km-val').textContent='R$ '+fmt2(R.custoPorKm)+'/km';
+  // Refresca indicadores disponíveis (libera cards de Lucro)
+  renderIndicators();
+}
+
 function confirmValues(){
   closeModal();
   const simPct=parseFloat(document.getElementById('sim-slider').value)||0;
   const simFactor=1+simPct/100;
   const R=calcData;
-  // Aplica os valores SIMULADOS (não os base) ao semáforo
   const gKmSim=R.ganhoPorKm*simFactor;
   const gHrSim=R.ganhoPorHr*simFactor;
   sc.km.hi=parseFloat(gKmSim.toFixed(2));
@@ -1088,10 +1112,10 @@ function confirmValues(){
   sc.hr.hi=parseFloat(gHrSim.toFixed(2));
   sc.hr.lo=parseFloat((gHrSim*0.8).toFixed(2));
   renderSlider('km');renderSlider('hr');
-  // Mostra bloco Editar+Detalhes
   document.getElementById('lucro-state-none').style.display='none';
   document.getElementById('lucro-state-done').style.display='block';
   document.getElementById('lucro-custo-km-val').textContent='R$ '+fmt2(R.custoPorKm)+'/km';
+  renderIndicators();
   showToast('✅ Valores aplicados ao Semáforo de Valores!');
   setTimeout(()=>go('v-ganho'),1500);
 }
@@ -1423,7 +1447,7 @@ function moveThumb(cx){
 }
 
 // INDICADORES
-let selected=['$/Km','Lucro','Lucro %'];let dragSrc=null;
+let selected=['$/Km','$/Hora','Nota'];let dragSrc=null;
 function renderIndicators(){
   const selDiv=document.getElementById('ind-selected');
   const avDiv=document.getElementById('ind-available');
@@ -1433,10 +1457,20 @@ function renderIndicators(){
   IND_KEYS.filter(k=>!selected.includes(k)).forEach(key=>avDiv.appendChild(makeIndCard(key,null,false)));
 }
 function makeIndCard(key,num,isSel){
+  const lucroKeys=['Lucro','Lucro %','Lucro /Hora'];
+  const temCalculo=calcData&&Object.keys(calcData).length>0&&calcData.custoPorKm>0;
+  const bloqueado=lucroKeys.includes(key)&&!temCalculo;
   const d=document.createElement('div');
-  d.className='ind-card card-bg'+(isSel?' selected':'');
+  d.className='ind-card card-bg'+(isSel?' selected':'')+(bloqueado?' bloqueado':'');
+  if(bloqueado){
+    d.style.opacity='0.35';
+    d.style.cursor='not-allowed';
+    d.title='Configure o Lucro Líquido para usar este indicador';
+  }
   d.innerHTML='<div class="ind-num">'+(num||'')+'</div><div class="ind-check '+(isSel?'on':'')+'">'+(isSel?'✓':'')+'</div><div class="ind-lbl txt-p">'+indLabel(key)+'</div>';
-  d.querySelector('.ind-check').onclick=e=>{e.stopPropagation();toggleIndicator(key,isSel);};
+  if(!bloqueado){
+    d.querySelector('.ind-check').onclick=e=>{e.stopPropagation();toggleIndicator(key,isSel);};
+  }
   if(isSel){
     d.draggable=true;
     d.addEventListener('dragstart',()=>{dragSrc=key;setTimeout(()=>d.style.opacity='.4',0);});
@@ -1769,7 +1803,6 @@ function _showCard(idx) {
   if (!topCard) return;
   var r = RIDES_META[idx];
 
-  // Métricas
   var km_tot  = r.km_trip + r.km_p;
   var min_tot = r.min_trip + r.min_p;
   var rkm  = (r.rkm !== null && r.rkm !== undefined) ? r.rkm : (r.valor / km_tot);
@@ -1778,131 +1811,161 @@ function _showCard(idx) {
   var nota = 4.90;
 
   var temCalculo = calcData && Object.keys(calcData).length > 0 && calcData.custoPorKm > 0;
-  var cKm       = temCalculo ? (calcData.custoPorKm || 0) : 0;
-  var lucroTot  = temCalculo ? (r.valor - cKm * km_tot) : 0;
-  var lucroP    = (temCalculo && r.valor > 0) ? (lucroTot / r.valor * 100) : 0;
-  var lucroHr   = temCalculo ? (lucroTot / (min_tot / 60)) : 0;
+  var lucroKeys  = {'Lucro':1,'Lucro %':1,'Lucro /Hora':1};
 
-  // Indicadores que precisam de lucro líquido
-  var lucroKeys = {'Lucro':1, 'Lucro %':1, 'Lucro /Hora':1};
-
-  // Filtrar `selected` global (de Aparência): máx 4, sem lucro se não tem cálculo
+  // Indicadores ativos (respeita selected e ordem, máx 4)
   var activeInds = [];
   for (var i = 0; i < selected.length && activeInds.length < 4; i++) {
     var k = selected[i];
-    if (lucroKeys[k] && !temCalculo) continue; // pula lucro sem cálculo
+    if (lucroKeys[k] && !temCalculo) continue;
     activeInds.push(k);
   }
 
-  // Valor e config semáforo por indicador
-  function indData(k) {
-    if (k === '$/Km')        return { raw: rkm,     fmt: fmtKm(rkm),         cfg: sc.km };
-    if (k === '$/Hora')      return { raw: rhr,     fmt: fmtHr(rhr),         cfg: sc.hr };
-    if (k === '$/Min')       return { raw: rmin,    fmt: fmtMin(rmin),       cfg: null  };
-    if (k === 'Nota')        return { raw: nota,    fmt: nota.toFixed(2).replace('.',','), cfg: sc.nt };
-    if (k === 'Lucro')       return { raw: lucroTot,fmt: fmtR(lucroTot),     cfg: null  };
-    if (k === 'Lucro %')     return { raw: lucroP,  fmt: lucroP.toFixed(0)+'%', cfg: null };
-    if (k === 'Lucro /Hora') return { raw: lucroHr, fmt: fmtR(lucroHr),      cfg: null  };
+  var cKm      = temCalculo ? (calcData.custoPorKm || 0) : 0;
+  var lucroTot = temCalculo ? (r.valor - cKm * km_tot)   : 0;
+  var lucroP   = (temCalculo && r.valor > 0) ? (lucroTot / r.valor * 100) : 0;
+  var lucroHr  = temCalculo ? (lucroTot / (min_tot / 60)) : 0;
+
+  function _iD(k) {
+    if (k==='$/Km')        return {raw:rkm,      fmt:rkm.toFixed(2).replace('.',','),              cfg:sc.km};
+    if (k==='$/Hora')      return {raw:rhr,      fmt:Math.round(rhr).toString(),                   cfg:sc.hr};
+    if (k==='$/Min')       return {raw:rmin,     fmt:rmin.toFixed(2).replace('.',','),             cfg:null};
+    if (k==='Nota')        return {raw:nota,      fmt:'4,90',                                       cfg:sc.nt};
+    if (k==='Lucro')       return {raw:lucroTot, fmt:(lucroTot<0?'-':'')+Math.abs(lucroTot).toFixed(0), cfg:null};
+    if (k==='Lucro %')     return {raw:lucroP,   fmt:lucroP.toFixed(0)+'%',                        cfg:null};
+    if (k==='Lucro /Hora') return {raw:lucroHr,  fmt:(lucroHr<0?'-':'')+Math.abs(lucroHr).toFixed(0), cfg:null};
     return null;
   }
-
-  function fmtKm(v)  { return v.toFixed(2).replace('.',','); }
-  function fmtHr(v)  { return Math.round(v).toString(); }
-  function fmtMin(v) { return v.toFixed(2).replace('.',','); }
-  function fmtR(v)   { return (v < 0 ? '-' : '') + Math.abs(v).toFixed(0); }
-
-  // Cor de cada indicador
-  function indColor(k, d) {
+  function _iC(k, d) {
     if (!d) return '#8A9099';
-    var cfg = d.cfg;
-    if (cfg) {
-      if (d.raw >= cfg.hi) return '#00C853';
-      if (d.raw >= cfg.lo) return '#FFD600';
-      return '#EF4444';
-    }
-    // sem cfg semáforo — heurística
-    if (k === 'Lucro' || k === 'Lucro /Hora') return d.raw >= 0 ? '#00C853' : '#EF4444';
-    if (k === 'Lucro %')  return d.raw >= 40 ? '#00C853' : d.raw >= 20 ? '#FFD600' : '#EF4444';
-    if (k === '$/Min') {
-      var hi = sc.hr.hi/60, lo = sc.hr.lo/60;
-      return d.raw >= hi ? '#00C853' : d.raw >= lo ? '#FFD600' : '#EF4444';
-    }
+    if (d.cfg) return d.raw>=d.cfg.hi?'#00C853':d.raw>=d.cfg.lo?'#FFD600':'#EF4444';
+    if (k==='Lucro'||k==='Lucro /Hora') return d.raw>=0?'#00C853':'#EF4444';
+    if (k==='Lucro %') return d.raw>=40?'#00C853':d.raw>=20?'#FFD600':'#EF4444';
+    if (k==='$/Min') { var hi=sc.hr.hi/60,lo=sc.hr.lo/60; return d.raw>=hi?'#00C853':d.raw>=lo?'#FFD600':'#EF4444'; }
     return '#8A9099';
   }
 
-  // Semáforo único: baseado APENAS em $/Km e $/Hr
-  // Verde+Verde=Verde | Verde+Amarelo=Verde | Verde+Vermelho=Amarelo
-  // Amarelo+Amarelo=Amarelo | Amarelo+Vermelho=Vermelho | Vermelho+Vermelho=Vermelho
-  var dKm  = indData('$/Km');
-  var dHr  = indData('$/Hora');
-  var cKmS = indColor('$/Km',  dKm);   // cor do $/Km
-  var cHrS = indColor('$/Hora', dHr);  // cor do $/Hr
-  // Converte cor para nível: 2=verde, 1=amarelo, 0=vermelho
-  function _lvl(c) { return c === '#00C853' ? 2 : c === '#FFD600' ? 1 : 0; }
-  var lvKm = _lvl(cKmS), lvHr = _lvl(cHrS);
-  var lvSum = lvKm + lvHr; // 0..4
-  // Verde+Verde=4, Verde+Amarelo=3, Amarelo+Amarelo=2, Verde+Vermelho=2(min=0→Amarelo), Amarelo+Vermelho=1, Vermelho+Vermelho=0
-  // Regra: se um deles é verde e o outro não é vermelho → verde; se um verde + vermelho → amarelo; resto → pela soma
+  // Semáforo único: apenas $/Km e $/Hr
+  var dK=_iD('$/Km'), dH=_iD('$/Hora');
+  var cK=_iC('$/Km',dK), cH=_iC('$/Hora',dH);
+  function _lv(c){return c==='#00C853'?2:c==='#FFD600'?1:0;}
+  var lK=_lv(cK), lH=_lv(cH);
   var sC;
-  if (lvKm === 2 && lvHr === 2) { sC = '#00C853'; }       // Verde + Verde = Verde
-  else if (lvKm === 2 && lvHr === 1) { sC = '#00C853'; }  // Verde + Amarelo = Verde
-  else if (lvHr === 2 && lvKm === 1) { sC = '#00C853'; }  // Amarelo + Verde = Verde
-  else if (lvKm === 2 && lvHr === 0) { sC = '#FFD600'; }  // Verde + Vermelho = Amarelo
-  else if (lvHr === 2 && lvKm === 0) { sC = '#FFD600'; }  // Vermelho + Verde = Amarelo
-  else if (lvKm === 1 && lvHr === 1) { sC = '#FFD600'; }  // Amarelo + Amarelo = Amarelo
-  else if (lvKm === 1 && lvHr === 0) { sC = '#EF4444'; }  // Amarelo + Vermelho = Vermelho
-  else if (lvHr === 1 && lvKm === 0) { sC = '#EF4444'; }  // Vermelho + Amarelo = Vermelho
-  else                               { sC = '#EF4444'; }  // Vermelho + Vermelho = Vermelho
-  var sFg = sC === '#FFD600' ? '#1C1C1C' : 'white';
+  if      (lK===2&&lH===2){sC='#00C853';}
+  else if (lK===2&&lH===1){sC='#00C853';}
+  else if (lK===1&&lH===2){sC='#00C853';}
+  else if (lK===2&&lH===0){sC='#FFD600';}
+  else if (lK===0&&lH===2){sC='#FFD600';}
+  else if (lK===1&&lH===1){sC='#FFD600';}
+  else                    {sC='#EF4444';}
 
-  // App badge
-  var appBg  = r.app === '99' ? '#FFD700' : '#1C1C1C';
-  var appFg  = r.app === '99' ? '#1C1C1C' : 'white';
+  // ── Tema do cartão ──────────────────────────────────────
+  // currentTheme: 'Escuro' | 'Claro' | 'Semáforo'
+  var tema = (typeof currentTheme !== 'undefined') ? currentTheme : 'Escuro';
+  var cardBg, cardBorder, valColor, lblColor, pipeBg, subColor, appBadgeBg, appBadgeFg;
+  if (tema === 'Claro') {
+    cardBg      = 'rgba(255,255,250,0.97)';
+    cardBorder  = sC;
+    valColor    = '#1C1C1C';
+    lblColor    = '#8A9099';
+    pipeBg      = sC;
+    subColor    = '#666';
+    appBadgeBg  = '#1C1C1C';
+    appBadgeFg  = 'white';
+  } else if (tema === 'Semáforo') {
+    cardBg      = sC;
+    cardBorder  = sC;
+    valColor    = sC==='#FFD600'?'#1C1C1C':'white';
+    lblColor    = sC==='#FFD600'?'rgba(0,0,0,0.6)':'rgba(255,255,255,0.75)';
+    pipeBg      = sC==='#FFD600'?'rgba(0,0,0,0.25)':'rgba(255,255,255,0.35)';
+    subColor    = sC==='#FFD600'?'rgba(0,0,0,0.6)':'rgba(255,255,255,0.8)';
+    appBadgeBg  = sC==='#FFD600'?'rgba(0,0,0,0.2)':'rgba(0,0,0,0.25)';
+    appBadgeFg  = sC==='#FFD600'?'#1C1C1C':'white';
+  } else { // Escuro (padrão)
+    cardBg      = 'rgba(14,17,22,0.96)';
+    cardBorder  = sC;
+    valColor    = 'white';
+    lblColor    = '#8A9099';
+    pipeBg      = sC;
+    subColor    = '#8A9099';
+    appBadgeBg  = '#1C1C1C';
+    appBadgeFg  = 'white';
+  }
 
-  // ── HTML do card ────────────────────────────────
-  // Visual igual ao print: fundo escuro, borda colorida, pipe entre indicadores, info abaixo
-  var html = '<div style="background:rgba(14,17,22,0.96);border-bottom:3px solid ' + sC + ';padding:10px 12px 8px;">';
+  // ── Posição do cartão (idêntico ao Visualizar) ────────────
+  var pos = (typeof currentPos !== 'undefined') ? currentPos : 'Centro';
+  var topCard2 = document.getElementById('demo-top-card');
+  if (topCard2) {
+    // Aplicar flex + alinhamento igual ao viz-card-area
+    topCard2.style.display = 'flex';
+    if (pos === 'Esquerda') {
+      topCard2.style.justifyContent = 'flex-start';
+      topCard2.style.padding = '0';
+    } else if (pos === 'Direita') {
+      topCard2.style.justifyContent = 'flex-end';
+      topCard2.style.padding = '0';
+    } else {
+      topCard2.style.justifyContent = 'center';
+      topCard2.style.padding = '0 12px';
+    }
+  }
+
+  // Border-radius e borda do card conforme posição (igual ao sema-card)
+  var cardRadius, cardExtraBorder;
+  if (pos === 'Esquerda') {
+    cardRadius = '0 14px 14px 0';
+    cardExtraBorder = 'border-left:none;';
+  } else if (pos === 'Direita') {
+    cardRadius = '14px 0 0 14px';
+    cardExtraBorder = 'border-right:none;';
+  } else {
+    cardRadius = '14px';
+    cardExtraBorder = '';
+  }
+
+  // ── HTML do card ────────────────────────────────────────
+  var html = '<div style="background:'+cardBg+';border:2px solid '+cardBorder+';'+cardExtraBorder
+    + 'border-radius:'+cardRadius+';overflow:hidden;min-width:160px;max-width:320px;">';
 
   // Linha de indicadores com pipe
-  html += '<div style="display:flex;align-items:stretch;background:#121621;border-radius:10px;overflow:hidden;border:1.5px solid ' + sC + ';margin-bottom:6px;">';
+  html += '<div style="display:flex;align-items:stretch;">';
   activeInds.forEach(function(k, i) {
-    var d  = indData(k);
-    var c  = indColor(k, d);
-    var lbl = k === 'Lucro /Hora' ? 'L/Hr' : k === 'Lucro %' ? 'L %' : k;
-    // pipe separador
+    var d  = _iD(k);
+    // No tema Semáforo, todos os valores em branco (ou preto se fundo amarelo)
+    var c  = (tema === 'Semáforo') ? valColor : _iC(k, d);
+    var lbl = k==='Lucro /Hora'?'L/Hr':k==='Lucro %'?'L %':k;
     if (i > 0) {
-      html += '<div style="width:1px;background:' + sC + ';opacity:0.4;margin:6px 0;flex-shrink:0;"></div>';
+      html += '<div style="width:1.5px;background:'+pipeBg+';opacity:0.5;margin:8px 0;flex-shrink:0;"></div>';
     }
-    html += '<div style="flex:1;padding:7px 3px;text-align:center;min-width:0;">'
-      + '<div style="font-size:8px;color:#8A9099;margin-bottom:2px;white-space:nowrap;overflow:hidden;">' + lbl + '</div>'
-      + '<div style="font-size:19px;font-weight:900;color:' + c + ';line-height:1.1;white-space:nowrap;">'
+    html += '<div style="flex:1;padding:10px 6px 8px;text-align:center;min-width:0;">'
+      + '<div style="font-size:10px;color:'+lblColor+';margin-bottom:3px;white-space:nowrap;font-weight:600;">' + lbl + '</div>'
+      + '<div style="font-size:22px;font-weight:900;color:'+c+';line-height:1;white-space:nowrap;">'
       +   (d ? d.fmt : '—')
       + '</div>'
       + '</div>';
   });
   html += '</div>';
 
-  // Linha inferior: badge app + distância+tempo
-  html += '<div style="display:flex;align-items:center;gap:6px;">'
-    + '<span style="background:' + appBg + ';color:' + appFg + ';font-size:9px;font-weight:800;padding:2px 7px;border-radius:5px;">' + r.app.toUpperCase() + '</span>'
-    + '<span style="font-size:10px;color:#8A9099;">' + r.cat + '</span>'
-    + '<span style="margin-left:auto;font-size:10px;color:#8A9099;">'
-    +   min_tot + ' min · ' + km_tot.toFixed(1) + ' km'
-    + '</span>'
+  // Linha inferior: app badge + tempo+km
+  var appBg2  = r.app === '99' ? '#FFD700' : '#000';
+  var appFg2  = r.app === '99' ? '#000' : 'white';
+  html += '<div style="display:flex;align-items:center;gap:6px;padding:5px 8px 7px;border-top:1px solid '+pipeBg+';opacity:0.85;">'
+    + '<span style="background:'+appBg2+';color:'+appFg2+';font-size:9px;font-weight:900;padding:2px 6px;border-radius:4px;">' + r.app.toUpperCase() + '</span>'
+    + '<span style="font-size:11px;color:'+subColor+';font-weight:600;">' + min_tot + ' min · ' + km_tot.toFixed(1) + ' km</span>'
     + '</div>';
 
-  html += '</div>'; // fim card
+  html += '</div>';
 
+  // Montar a área do card
   topCard.innerHTML = html;
 
-  // Anima entrada vindo de cima
-  topCard.style.display = 'block';
-  topCard.style.transform = 'translateY(-100%)';
-  topCard.style.opacity   = '0';
-  topCard.style.transition = 'transform 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.35s';
+  // Animação vindo de cima
+  topCard.style.opacity = '0';
+  topCard.style.transform = 'translateY(-12px)';
+  topCard.style.transition = 'opacity 0.35s, transform 0.35s';
   setTimeout(function() {
+    topCard.style.opacity = '1';
     topCard.style.transform = 'translateY(0)';
-    topCard.style.opacity   = '1';
   }, 20);
 }
 
