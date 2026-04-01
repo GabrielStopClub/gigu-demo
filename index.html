@@ -815,7 +815,7 @@ input[type=range]{width:100%;accent-color:#FF5900;}
 </div>
 
 <!-- FAB -->
-<div class="fab" id="fab-global" style="bottom:80px;right:12px;width:52px;height:52px;" onclick="toggleFabMenu()">
+<div class="fab" id="fab-global" style="bottom:80px;right:12px;width:52px;height:52px;" onclick="_fabClick()">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 1543.5" height="16" id="fab-svg" style="display:block"><path fill="#FFFFFA" d="M935.43,145.16c-38.31-32.49-145.26-12.54-191.88-1.65-196.8,45.99-484.02,233.34-553.2,430.59-33.63,95.85-36.33,228.15,90.93,243.48,173.19,20.85,371.88-103.29,487.38-223.14-5.64-7.2-23.97-4.23-32.91-3.54-60.93,4.62-143.76,28.44-198.69,29.49-108.39,2.04-125.1-158.55-7.32-169.41,139.77-12.87,302.91,7.59,444.93,3.63,46.29,25.02,54.12,52.77,50.85,103.08-5.37,82.68-60.81,313.68-86.91,397.62-33.99,109.38-157.59,93.06-169.59,5.67-7.74-56.37,74.28-194.04,80.34-260.04-155.49,196.65-589.71,420.72-785.31,172.35-200.67-254.79,115.74-581.1,323.46-711.33,151.05-94.71,532.23-265.5,663.33-77.25,51.24,73.59,45.36,267.9-67.41,221.52-75.51-31.05-4.5-124.14-48.03-161.07h.03Z"/><path fill="#FFFFFA" d="M1101.57,977.43c-15.81-15.42-27.27-51.3-23.94-73.47,43.8-155.58,54.51-340.59,102.6-492.6,30.39-96,133.8-59.43,132,13.89-41.94,156.45-37.26,361.41-83.13,512.19-17.79,58.41-82.11,84.36-127.53,39.99h0Z"/><path fill="#FFFFFA" d="M1287.81,100.49c162.48-36.9,150.87,188.01,12.09,194.01-126.12,5.46-112.26-171.27-12.09-194.01Z"/><path fill="#FFFFFA" d="M1899.24,921.21c-142.98,115.77-434.55,159.69-506.79-54.78-94.44-280.41,298.47-634.8,570.54-526.5,22.32,8.88,75.84,51.06,80.55,51.9,9.69,1.71,25.11-19.23,43.59-21.21,37.71-4.02,65.49,18.72,68.79,55.95,4.47,50.07-40.71,236.49-54.63,296.49-57.78,249.57-151.59,526.56-364.14,685.71-238.47,178.56-594.81,195.87-796.02-47.01-43.59-52.59-101.73-168,1.77-189.24,84.06-17.25,93.18,48.42,134.31,97.23,109.98,130.62,282.93,141.84,436.92,92.19,192.63-62.13,327.36-255,385.11-440.73h0ZM1809.45,475.25c-104.4,15.3-218.34,118.53-253.44,216.42-85.14,237.33,186.15,189.72,302.73,82.47,102.09-93.9,177.72-332.13-49.26-298.89h-.03Z"/><path fill="#FFFFFA" d="M2367.31,129.8c54.27-10.44,97.8,28.62,97.86,82.92.24,151.83-112.74,393.06-94.08,534.03,20.76,156.81,235.83,134.4,321.42,46.26,99.75-102.75,106.23-443.01,148.5-593.01,31.32-111.12,164.88-88.77,158.79,26.28-5.46,103.05-77.79,483.24-122.67,567.78-90.18,169.89-294.75,244.17-476.94,187.89-174.96-54.03-198.18-219.42-175.5-377.85,15.87-110.94,51.66-311.85,83.49-415.74,8.94-29.13,27.66-52.53,59.19-58.56h-.06Z"/></svg>
 </div>
 <div class="fab-menu hidden" id="fab-menu-global">
@@ -1707,18 +1707,44 @@ function updateHomeBadges(){
 // FAB DRAG
 let fabDrag=null,fdx=0,fdy=0;
 const fabEl=document.getElementById('fab-global');
+// FAB drag — distingue tap de arrasto no mobile
+var fabTouchStartX=0, fabTouchStartY=0, fabMoved=false;
+var _fabLastTouch=0; // evitar double-fire click+touchend
+
+function _fabClick(){
+  // No mobile o touchend já chamou toggleFabMenu — evitar duplo disparo
+  if(Date.now()-_fabLastTouch<400) return;
+  toggleFabMenu();
+}
+
 fabEl.addEventListener('mousedown',e=>{
   const r=fabEl.getBoundingClientRect();const pr=document.getElementById('screen').getBoundingClientRect();
   fdx=e.clientX-r.left;fdy=e.clientY-r.top;fabDrag=pr;e.preventDefault();
 });
+
 fabEl.addEventListener('touchstart',e=>{
   const r=fabEl.getBoundingClientRect();const pr=document.getElementById('screen').getBoundingClientRect();
-  fdx=e.touches[0].clientX-r.left;fdy=e.touches[0].clientY-r.top;fabDrag=pr;e.preventDefault();
-},{passive:false});
+  fdx=e.touches[0].clientX-r.left;fdy=e.touches[0].clientY-r.top;
+  fabTouchStartX=e.touches[0].clientX;fabTouchStartY=e.touches[0].clientY;
+  fabMoved=false;fabDrag=pr;
+  // NÃO chama preventDefault aqui — deixa o click funcionar se for tap
+},{passive:true});
+
 document.addEventListener('mousemove',e=>{if(!fabDrag)return;moveFab(e.clientX,e.clientY);});
-document.addEventListener('touchmove',e=>{if(!fabDrag)return;moveFab(e.touches[0].clientX,e.touches[0].clientY);e.preventDefault();},{passive:false});
+document.addEventListener('touchmove',e=>{
+  if(!fabDrag)return;
+  var dx=Math.abs(e.touches[0].clientX-fabTouchStartX);
+  var dy=Math.abs(e.touches[0].clientY-fabTouchStartY);
+  if(dx>6||dy>6){ fabMoved=true; moveFab(e.touches[0].clientX,e.touches[0].clientY); e.preventDefault(); }
+},{passive:false});
 document.addEventListener('mouseup',()=>fabDrag=null);
-document.addEventListener('touchend',()=>fabDrag=null);
+document.addEventListener('touchend',e=>{
+  if(!fabMoved && fabDrag){
+    _fabLastTouch=Date.now();
+    toggleFabMenu(); // tap — abre menu
+  }
+  fabDrag=null;fabMoved=false;
+});
 function moveFab(cx,cy){
   const pr=fabDrag;
   let x=cx-pr.left-fdx,y=cy-pr.top-fdy;
