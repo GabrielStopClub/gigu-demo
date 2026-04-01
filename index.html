@@ -331,8 +331,8 @@ input[type=range]{width:100%;accent-color:#FF5900;}
   <div class="sub-banner"><div><div style="font-size:14px;font-weight:700;color:#FF5900;letter-spacing:0.3px;">Assinatura Ativa</div><div style="font-size:12px;color:#FF5900;margin-top:2px;opacity:0.8;">Encerra em: sex, 6 de jan de 2226</div></div><span style="font-size:18px;color:#FF5900;">›</span></div>
   <div class="sa">
     <div class="module-card card-bg">
-      <div class="mr"><div class="mi"><div class="mn txt-p">Copiloto</div><div class="ms txt-s">Botão flutuante ativo</div></div><span class="gi" onclick="go('v-copiloto')">⚙️</span><div class="tg on" onclick="toggleEl(this)"><div class="tt"></div></div></div>
-      <div class="mr divr" style="border-top:1px solid transparent;"><div class="mi"><div class="mn txt-p">Cálculo de Ganhos</div><div class="ab" id="home-app-badges"></div></div><span class="gi" onclick="go('v-ganho')">⚙️</span><div class="tg on" id="tg-ganhos" onclick="toggleEl(this)"><div class="tt"></div></div></div>
+      <div class="mr"><div class="mi"><div class="mn txt-p">Copiloto</div><div class="ms txt-s">Botão flutuante ativo</div></div><span class="gi" onclick="go('v-copiloto')">⚙️</span><div class="tg on" id="tg-copiloto" onclick="toggleCopiloto()"><div class="tt"></div></div></div>
+      <div class="mr divr" style="border-top:1px solid transparent;"><div class="mi"><div class="mn txt-p">Cálculo de Ganhos</div><div class="ab" id="home-app-badges"></div></div><span class="gi" onclick="go('v-ganho')">⚙️</span><div class="tg on" id="tg-ganhos" onclick="toggleGanhos()"><div class="tt"></div></div></div>
       <div class="mr divr" style="border-top:1px solid transparent;"><div class="mi"><div class="mn txt-s">Câmera Secreta</div></div><span class="gi" onclick="go('v-camera')">⚙️</span><div class="tg off" id="tg-camera" onclick="toggleEl(this)"><div class="tt"></div></div></div>
     </div>
     <div class="tbtn">▶  Vídeo Tutorial</div>
@@ -1372,6 +1372,45 @@ function toggleTema(){
   applyAppTheme();
 }
 
+// ── Regras dos toggles Copiloto e Cálculo de Ganhos ─────────────────────────
+function _setGanhos(on) {
+  var tg = document.getElementById('tg-ganhos');
+  if (!tg) return;
+  tg.classList.toggle('on', on);
+  tg.classList.toggle('off', !on);
+  // Sincroniza círculo do FAB
+  var fab = document.getElementById('fab-gan-circle');
+  if (fab) { fab.classList.toggle('green', on); fab.classList.toggle('gray', !on); }
+}
+
+function toggleCopiloto() {
+  var tg = document.getElementById('tg-copiloto');
+  if (!tg) return;
+  var ligar = tg.classList.contains('off'); // vai ligar
+  tg.classList.toggle('on', ligar);
+  tg.classList.toggle('off', !ligar);
+  // Se DESLIGOU o copiloto → desliga também o cálculo de ganhos
+  if (!ligar) {
+    _setGanhos(false);
+    showToast('Copiloto desligado — Cálculo de Ganhos desligado');
+  }
+}
+
+function toggleGanhos() {
+  // Só pode ligar se Copiloto estiver ligado
+  var tgCop = document.getElementById('tg-copiloto');
+  var copOn = tgCop && tgCop.classList.contains('on');
+  var tg = document.getElementById('tg-ganhos');
+  if (!tg) return;
+  var querLigar = tg.classList.contains('off');
+  if (querLigar && !copOn) {
+    showToast('Ligue o Copiloto primeiro');
+    return;
+  }
+  _setGanhos(querLigar);
+}
+
+
 function toggleEl(el){el.classList.toggle('on');el.classList.toggle('off');}
 
 function getFirstName(full){return full.trim().split(' ')[0]||full;}
@@ -1686,7 +1725,23 @@ function moveFab(cx,cy){
   x=Math.max(0,Math.min(x,pr.width-52));y=Math.max(0,Math.min(y,pr.height-52));
   fabEl.style.left=x+'px';fabEl.style.top=y+'px';fabEl.style.bottom='auto';fabEl.style.right='auto';
 }
-function toggleFabMenu(){document.getElementById('fab-menu-global').classList.toggle('hidden');}
+function toggleFabMenu(){
+  const menu=document.getElementById('fab-menu-global');
+  const abrir=menu.classList.contains('hidden');
+  if(abrir){
+    // Sincroniza visual do botão Ganhos com estado real
+    const tg=document.getElementById('tg-ganhos');
+    const on=tg&&tg.classList.contains('on');
+    const c=document.getElementById('fab-gan-circle');
+    if(c){c.classList.toggle('green',on);c.classList.toggle('gray',!on);}
+    // Sincroniza Câmera
+    const tgCam=document.getElementById('tg-camera');
+    const onCam=tgCam&&tgCam.classList.contains('on');
+    const cc=document.getElementById('fab-cam-circle');
+    if(cc){cc.classList.toggle('green',onCam);cc.classList.toggle('gray',!onCam);}
+  }
+  menu.classList.toggle('hidden');
+}
 function toggleFabCamera(){
   const tg=document.getElementById('tg-camera');tg.classList.toggle('on');tg.classList.toggle('off');
   const on=tg.classList.contains('on');
@@ -1694,16 +1749,29 @@ function toggleFabCamera(){
   document.getElementById('fab-menu-global').classList.add('hidden');
 }
 function toggleFabGanhos(){
-  const tg=document.getElementById('tg-ganhos');tg.classList.toggle('on');tg.classList.toggle('off');
-  const on=tg.classList.contains('on');
-  const c=document.getElementById('fab-gan-circle');c.classList.toggle('green',on);c.classList.toggle('gray',!on);
+  // Verifica regra do copiloto
+  const tgCop=document.getElementById('tg-copiloto');
+  const copOn=tgCop&&tgCop.classList.contains('on');
+  const tg=document.getElementById('tg-ganhos');
+  const querLigar=tg.classList.contains('off');
+  if(querLigar&&!copOn){
+    document.getElementById('fab-menu-global').classList.add('hidden');
+    showToast('Ligue o Copiloto primeiro');
+    return;
+  }
+  _setGanhos(querLigar);
   document.getElementById('fab-menu-global').classList.add('hidden');
   // Se o viewer do Demo estiver aberto, controla o card diretamente
   const viewer=document.getElementById('demo-viewer');
   if(viewer&&viewer.style.display!=='none'){
     const topCard=document.getElementById('demo-top-card');
-    if(on&&_curRide>=0){_showCard(_curRide);}
-    else if(topCard){topCard.style.display='none';}
+    if(querLigar&&_curRide>=0){
+      // Ligou: mostrar card da corrida atual
+      if(_curRide<RIDES_META.length){ _showCard(_curRide); }
+      else { _showUserCard(_curRide); }
+    } else if(topCard){
+      topCard.style.display='none';
+    }
   }
 }
 
