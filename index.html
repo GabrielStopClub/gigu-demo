@@ -20,7 +20,7 @@ body{font-family:'Nunito',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif
 .app-dark .top-bar,.app-dark .screen-hdr{background:#1A2030;color:white;border-bottom-color:#2A3142!important;}
 .app-dark .card-bg{background:#1A2030;}.app-dark .txt-p{color:white;}.app-dark .txt-s{color:#8A9099;}
 .app-dark .divr{border-top-color:#2A3142!important;}.app-dark .tab-el{background:#1A2030;border-top:1px solid #2A3142;}
-.app-dark .lang-opt{background:#1A2030;border-color:#2A3142;}.app-dark .lang-opt.sel{border-color:#FF5900;background:#1a2535;}
+.app-dark .app-dark .lang-opt{background:#1A2030;border-color:#2A3142;}.app-dark .lang-opt.sel{border-color:#FF5900;background:#1a2535;}
 .app-dark .edit-field-input{background:#1A2030;border-color:#2A3142;color:white;}
 .app-dark .ec-card{background:#1A2030;}.app-dark .ec-scroll{background:#121621;}
 .app-dark .ec-section-title{color:white;}.app-dark .ec-card-sub{color:white;}
@@ -326,21 +326,21 @@ input[type=range]{width:100%;accent-color:#FF5900;}
     <div style="height:38px;display:flex;align-items:center;">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 1543.5" height="28" style="display:block"><path fill="#FF5900" d="M935.43,145.16c-38.31-32.49-145.26-12.54-191.88-1.65-196.8,45.99-484.02,233.34-553.2,430.59-33.63,95.85-36.33,228.15,90.93,243.48,173.19,20.85,371.88-103.29,487.38-223.14-5.64-7.2-23.97-4.23-32.91-3.54-60.93,4.62-143.76,28.44-198.69,29.49-108.39,2.04-125.1-158.55-7.32-169.41,139.77-12.87,302.91,7.59,444.93,3.63,46.29,25.02,54.12,52.77,50.85,103.08-5.37,82.68-60.81,313.68-86.91,397.62-33.99,109.38-157.59,93.06-169.59,5.67-7.74-56.37,74.28-194.04,80.34-260.04-155.49,196.65-589.71,420.72-785.31,172.35-200.67-254.79,115.74-581.1,323.46-711.33,151.05-94.71,532.23-265.5,663.33-77.25,51.24,73.59,45.36,267.9-67.41,221.52-75.51-31.05-4.5-124.14-48.03-161.07h.03Z"/><path fill="#FF5900" d="M1101.57,977.43c-15.81-15.42-27.27-51.3-23.94-73.47,43.8-155.58,54.51-340.59,102.6-492.6,30.39-96,133.8-59.43,132,13.89-41.94,156.45-37.26,361.41-83.13,512.19-17.79,58.41-82.11,84.36-127.53,39.99Z"/><path fill="#FF5900" d="M1287.81,100.49c162.48-36.9,150.87,188.01,12.09,194.01-126.12,5.46-112.26-171.27-12.09-194.01Z"/><path fill="#FF5900" d="M1899.24,921.21c-142.98,115.77-434.55,159.69-506.79-54.78-94.44-280.41,298.47-634.8,570.54-526.5,22.32,8.88,75.84,51.06,80.55,51.9,9.69,1.71,25.11-19.23,43.59-21.21,37.71-4.02,65.49,18.72,68.79,55.95,4.47,50.07-40.71,236.49-54.63,296.49-57.78,249.57-151.59,526.56-364.14,685.71-238.47,178.56-594.81,195.87-796.02-47.01-43.59-52.59-101.73-168,1.77-189.24,84.06-17.25,93.18,48.42,134.31,97.23,109.98,130.62,282.93,141.84,436.92,92.19,192.63-62.13,327.36-255,385.11-440.73h0ZM1809.45,475.25c-104.4,15.3-218.34,118.53-253.44,216.42-85.14,237.33,186.15,189.72,302.73,82.47,102.09-93.9,177.72-332.13-49.26-298.89h-.03Z"/><path fill="#FF5900" d="M2367.31,129.8c54.27-10.44,97.8,28.62,97.86,82.92.24,151.83-112.74,393.06-94.08,534.03,20.76,156.81,235.83,134.4,321.42,46.26,99.75-102.75,106.23-443.01,148.5-593.01,31.32-111.12,164.88-88.77,158.79,26.28-5.46,103.05-77.79,483.24-122.67,567.78-90.18,169.89-294.75,244.17-476.94,187.89-174.96-54.03-198.18-219.42-175.5-377.85,15.87-110.94,51.66-311.85,83.49-415.74,8.94-29.13,27.66-52.53,59.19-58.56h-.06Z"/></svg>
     </div>
-    <button class="help-btn">? CENTRAL DE AJUDA</button>
+    <button class="help-btn"><span data-i18n="ajuda">? CENTRAL DE AJUDA</span></button>
   </div>
-  <div class="sub-banner"><div><div style="font-size:14px;font-weight:700;color:#FF5900;letter-spacing:0.3px;">Assinatura Ativa</div><div style="font-size:12px;color:#FF5900;margin-top:2px;opacity:0.8;">Encerra em: sex, 6 de jan de 2226</div></div><span style="font-size:18px;color:#FF5900;">›</span></div>
+  <div class="sub-banner"><div><div style="font-size:14px;font-weight:700;color:#FF5900;letter-spacing:0.3px;" data-i18n="assinatura_ativa">Assinatura Ativa</div><div style="font-size:12px;color:#FF5900;margin-top:2px;opacity:0.8;" data-i18n="encerra_em">Encerra em: sex, 6 de jan de 2226</div></div><span style="font-size:18px;color:#FF5900;">›</span></div>
   <div class="sa">
     <div class="module-card card-bg">
-      <div class="mr"><div class="mi"><div class="mn txt-p">Copiloto</div><div class="ms txt-s">Botão flutuante ativo</div></div><span class="gi" onclick="go('v-copiloto')">⚙️</span><div class="tg on" id="tg-copiloto" onclick="toggleCopiloto()"><div class="tt"></div></div></div>
-      <div class="mr divr" style="border-top:1px solid transparent;"><div class="mi"><div class="mn txt-p">Cálculo de Ganhos</div><div class="ab" id="home-app-badges"></div></div><span class="gi" onclick="go('v-ganho')">⚙️</span><div class="tg on" id="tg-ganhos" onclick="toggleGanhos()"><div class="tt"></div></div></div>
-      <div class="mr divr" style="border-top:1px solid transparent;"><div class="mi"><div class="mn txt-s">Câmera Secreta</div></div><span class="gi" onclick="go('v-camera')">⚙️</span><div class="tg off" id="tg-camera" onclick="toggleEl(this)"><div class="tt"></div></div></div>
+      <div class="mr"><div class="mi"><div class="mn txt-p"><span data-i18n="copiloto">Copiloto</span></div><div class="ms txt-s"><span data-i18n="copiloto_sub"><span data-i18n="copiloto_sub">Botão flutuante ativo</span></span></div></div><span class="gi" onclick="go('v-copiloto')">⚙️</span><div class="tg on" id="tg-copiloto" onclick="toggleCopiloto()"><div class="tt"></div></div></div>
+      <div class="mr divr" style="border-top:1px solid transparent;"><div class="mi"><div class="mn txt-p"><span data-i18n="calculo_ganhos">Cálculo de Ganhos</span></div><div class="ab" id="home-app-badges"></div></div><span class="gi" onclick="go('v-ganho')">⚙️</span><div class="tg on" id="tg-ganhos" onclick="toggleGanhos()"><div class="tt"></div></div></div>
+      <div class="mr divr" style="border-top:1px solid transparent;"><div class="mi"><div class="mn txt-s"><span data-i18n="camera_secreta">Câmera Secreta</span></div></div><span class="gi" onclick="go('v-camera')">⚙️</span><div class="tg off" id="tg-camera" onclick="toggleEl(this)"><div class="tt"></div></div></div>
     </div>
-    <div class="tbtn">▶  Vídeo Tutorial</div>
+    <div class="tbtn"><span data-i18n="video_tutorial">▶  Vídeo Tutorial</span></div>
     <div style="background:white;border:2px solid #FF5900;border-radius:12px;padding:13px;text-align:center;font-size:15px;font-weight:800;color:#FF5900;margin-top:8px;cursor:pointer;letter-spacing:0.3px;" onclick="openDemo()">Demo</div>
     <div style="text-align:center;font-size:11px;margin-top:8px;" class="txt-s">v1.1.93 · 9U83A</div>
   </div>
   <div class="tab-el">
-    <div class="tab-item" onclick="go('v-home')"><span style="font-size:18px;">🚗</span><span style="font-size:13px;color:#FF5900;font-weight:600;">Copiloto</span></div>
+    <div class="tab-item" onclick="go('v-home')"><span style="font-size:18px;">🚗</span><span style="font-size:13px;color:#FF5900;font-weight:600;" data-i18n="copiloto">Copiloto</span></div>
     <div class="tab-item" onclick="go('v-perfil')"><span style="font-size:18px;">👤</span><span style="font-size:13px;" class="txt-s" id="tab-username">Luiz</span></div>
   </div>
 </div>
@@ -350,28 +350,28 @@ input[type=range]{width:100%;accent-color:#FF5900;}
     <div class="sa" style="padding-top:0;">
     <div class="profile-hdr">
       <div class="avatar" id="profile-avatar"><span id="profile-avatar-text">LG</span></div>
-      <button class="help-btn">? CENTRAL DE AJUDA</button>
+      <button class="help-btn"><span data-i18n="ajuda">? CENTRAL DE AJUDA</span></button>
     </div>
     <div class="profile-name txt-p" id="profile-name-display">Luiz Gustavo Neves</div>
-    <div class="invite-card"><span style="font-size:22px;">🔗</span><div><div style="font-size:15px;font-weight:700;color:white;">Convide seus amigos</div><div style="font-size:12px;color:rgba(255,255,255,0.8);">Toque para copiar seu código</div></div><div class="invite-code">9U83A</div></div>
+    <div class="invite-card"><span style="font-size:22px;">🔗</span><div><div style="font-size:15px;font-weight:700;color:white;"><span data-i18n="convide_amigos">Convide seus amigos</span></div><div style="font-size:12px;color:rgba(255,255,255,0.8);"><span data-i18n="copiar_codigo">Toque para copiar seu código</span></div></div><div class="invite-code">9U83A</div></div>
     <div class="module-card card-bg">
-      <div class="card-row" onclick="go('v-configs')"><span class="row-icon">⚙️</span><div class="row-mid"><div class="row-title txt-p">Configurações</div></div><span class="row-arrow">›</span></div>
-      <div class="card-row divr" style="border-top:1px solid transparent;"><span class="row-icon">🇫</span><div class="row-mid"><div class="row-title txt-p">Grupo de Facebook do GigU</div></div><span class="row-arrow">›</span></div>
-      <div class="card-row divr" onclick="go('v-sorteio')" style="border-top:1px solid transparent;"><span class="row-icon">🎁</span><div class="row-mid"><div class="row-title txt-p">Sorteio Semanal</div></div><span class="row-arrow">›</span></div>
+      <div class="card-row" onclick="go('v-configs')"><span class="row-icon">⚙️</span><div class="row-mid"><div class="row-title txt-p"><span data-i18n="configuracoes">Configurações</span></div></div><span class="row-arrow">›</span></div>
+      <div class="card-row divr" style="border-top:1px solid transparent;"><span class="row-icon">🇫</span><div class="row-mid"><div class="row-title txt-p"><span data-i18n="grupo_facebook">Grupo de Facebook do GigU</span></div></div><span class="row-arrow">›</span></div>
+      <div class="card-row divr" onclick="go('v-sorteio')" style="border-top:1px solid transparent;"><span class="row-icon">🎁</span><div class="row-mid"><div class="row-title txt-p"><span data-i18n="sorteio_semanal">Sorteio Semanal</span></div></div><span class="row-arrow">›</span></div>
     </div>
     <div class="module-card card-bg">
-      <div class="card-row"><span class="row-icon">🐷</span><div class="row-mid"><div class="row-title txt-p">GigU Conta</div><div class="row-sub txt-s">Assistente financeiro via WhatsApp</div></div><span class="row-arrow">›</span></div>
+      <div class="card-row"><span class="row-icon">🐷</span><div class="row-mid"><div class="row-title txt-p"><span data-i18n="gigu_conta">GigU Conta</span></div><div class="row-sub txt-s"><span data-i18n="gigu_conta_sub">Assistente financeiro via WhatsApp</span></div></div><span class="row-arrow">›</span></div>
     </div>
   </div>
   <div class="tab-el">
-    <div class="tab-item" onclick="go('v-home')"><span style="font-size:18px;">🚗</span><span style="font-size:13px;" class="txt-s">Copiloto</span></div>
+    <div class="tab-item" onclick="go('v-home')"><span style="font-size:18px;">🚗</span><span style="font-size:13px;" class="txt-s" data-i18n="copiloto">Copiloto</span></div>
     <div class="tab-item" onclick="go('v-perfil')"><span style="font-size:18px;color:#FF5900;">👤</span><span style="font-size:13px;color:#FF5900;font-weight:600;" id="tab-username-perfil">Luiz</span></div>
   </div>
 </div>
 
 <!-- SORTEIO -->
 <div class="vw hidden" id="v-sorteio">
-    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-perfil')">←</span><span class="screen-title txt-p">Sorteio Semanal</span></div>
+    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-perfil')">←</span><span class="screen-title txt-p" data-i18n="sorteio_semanal">Sorteio Semanal</span></div>
   <div class="sa">
     <div class="sorteio-banner"><div style="font-size:13px;color:#FF5900;font-weight:700;">SUPER SORTEIO</div><div style="font-size:28px;font-weight:900;color:white;font-style:italic;">GigU</div><div style="font-size:14px;color:#aaa;margin:4px 0 2px;">Ganhe</div><div style="font-size:36px;font-weight:900;color:#FF5900;">R$ 300,00</div><div style="font-size:13px;color:#aaa;">TODA SEMANA</div></div>
     <div class="module-card card-bg" style="padding:16px;"><div style="font-size:17px;font-weight:700;margin-bottom:8px;" class="txt-p">Sorteio Semanal para Assinantes</div><div style="font-size:13px;line-height:1.7;" class="txt-s">O sorteio é exclusivo para assinantes ativos. Todas as terças às 11h30 anunciamos um ganhador de R$300 ao vivo no Instagram.</div></div>
@@ -380,35 +380,35 @@ input[type=range]{width:100%;accent-color:#FF5900;}
 
 <!-- CONFIGS -->
 <div class="vw hidden" id="v-configs">
-    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-perfil')">←</span><span class="screen-title txt-p">Configurações</span></div>
+    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-perfil')">←</span><span class="screen-title txt-p" data-i18n="configuracoes">Configurações</span></div>
   <div class="sa">
-    <div class="stit txt-p">Aparência</div><div class="ssub txt-s">Personalize a aparência do aplicativo</div>
+    <div class="stit txt-p"><span data-i18n="aparencia">Aparência</span></div><div class="ssub txt-s"><span data-i18n="aparencia_config_sub">Personalize a aparência do aplicativo</span></div>
     <div class="config-card card-bg">
-      <div class="card-row"><span class="row-icon">🎨</span><div class="row-mid"><div class="row-title txt-p" id="tema-label">Tema Claro</div><div class="row-sub txt-s">Alternar o tema entre claro e escuro</div></div><div class="tg off" id="tg-tema" onclick="toggleTema()"><div class="tt"></div></div></div>
-      <div class="card-row divr" onclick="go('v-idioma')" style="border-top:1px solid transparent;"><span class="row-icon">🌐</span><div class="row-mid"><div class="row-title txt-p">Idioma</div><div class="row-sub txt-s">Defina o idioma do aplicativo</div></div><span style="font-size:13px;font-weight:600;color:#FF5900;margin-right:4px;" id="lang-current-label">PT</span><span class="row-arrow">›</span></div>
+      <div class="card-row"><span class="row-icon">🎨</span><div class="row-mid"><div class="row-title txt-p" id="tema-label" data-i18n="tema_claro">Tema Claro</div><div class="row-sub txt-s"><span data-i18n="tema_label_sub">Alternar o tema entre claro e escuro</span></div></div><div class="tg off" id="tg-tema" onclick="toggleTema()"><div class="tt"></div></div></div>
+      <div class="card-row divr" onclick="go('v-idioma')" style="border-top:1px solid transparent;"><span class="row-icon">🌐</span><div class="row-mid"><div class="row-title txt-p"><span data-i18n="idioma">Idioma</span></div><div class="row-sub txt-s"><span data-i18n="idioma_sub">Defina o idioma do aplicativo</span></div></div><span style="font-size:13px;font-weight:600;color:#FF5900;margin-right:4px;" id="lang-current-label">PT</span><span class="row-arrow">›</span></div>
     </div>
-    <div class="stit txt-p">Segurança</div><div class="ssub txt-s">Gerencie suas configurações de segurança</div>
+    <div class="stit txt-p"><span data-i18n="seguranca">Segurança</span></div><div class="ssub txt-s"><span data-i18n="seguranca_sub">Gerencie suas configurações de segurança</span></div>
     <div class="config-card card-bg">
-      <div class="card-row"><span class="row-icon">👆</span><div class="row-mid"><div class="row-title txt-p">Desbloqueio do aplicativo</div><div class="row-sub txt-s">Use o método de desbloqueio do seu dispositivo</div></div><div class="tg off" onclick="toggleEl(this)"><div class="tt"></div></div></div>
-      <div class="card-row divr" style="border-top:1px solid transparent;"><span class="row-icon">🔒</span><div class="row-mid"><div class="row-title txt-p">Senha</div></div><span class="row-arrow">›</span></div>
-      <div class="card-row divr" style="border-top:1px solid transparent;"><span class="row-icon">👥</span><div class="row-mid"><div class="row-title txt-p">Sessões Ativas</div></div><span class="row-arrow">›</span></div>
+      <div class="card-row"><span class="row-icon">👆</span><div class="row-mid"><div class="row-title txt-p"><span data-i18n="desbloqueio">Desbloqueio do aplicativo</span></div><div class="row-sub txt-s"><span data-i18n="desbloqueio_sub">Use o método de desbloqueio do seu dispositivo</span></div></div><div class="tg off" onclick="toggleEl(this)"><div class="tt"></div></div></div>
+      <div class="card-row divr" style="border-top:1px solid transparent;"><span class="row-icon">🔒</span><div class="row-mid"><div class="row-title txt-p"><span data-i18n="senha">Senha</span></div></div><span class="row-arrow">›</span></div>
+      <div class="card-row divr" style="border-top:1px solid transparent;"><span class="row-icon">👥</span><div class="row-mid"><div class="row-title txt-p"><span data-i18n="sessoes">Sessões Ativas</span></div></div><span class="row-arrow">›</span></div>
     </div>
-    <div class="stit txt-p">Conta</div><div class="ssub txt-s">Gerencie sua conta</div>
+    <div class="stit txt-p">Conta</div><div class="ssub txt-s"><span data-i18n="conta_sub">Gerencie sua conta</span></div>
     <div class="config-card card-bg">
-      <div class="card-row" onclick="go('v-editperfil')"><span class="row-icon" style="color:#FF5900;">✏️</span><div class="row-mid"><div class="row-title txt-p">Editar Perfil</div></div><span class="row-arrow">›</span></div>
-      <div class="card-row divr" style="border-top:1px solid transparent;"><span class="row-icon">🩺</span><div class="row-mid"><div class="row-title txt-p">Diagnóstico do Dispositivo</div></div><span class="row-arrow">›</span></div>
-      <div class="card-row divr" style="border-top:1px solid transparent;"><span class="row-icon" style="color:#FF5900;">⏻</span><div class="row-mid"><div class="row-title txt-p">Sair</div></div><span class="row-arrow">›</span></div>
+      <div class="card-row" onclick="go('v-editperfil')"><span class="row-icon" style="color:#FF5900;">✏️</span><div class="row-mid"><div class="row-title txt-p"><span data-i18n="editar_perfil">Editar Perfil</span></div></div><span class="row-arrow">›</span></div>
+      <div class="card-row divr" style="border-top:1px solid transparent;"><span class="row-icon">🩺</span><div class="row-mid"><div class="row-title txt-p"><span data-i18n="diagnostico">Diagnóstico do Dispositivo</span></div></div><span class="row-arrow">›</span></div>
+      <div class="card-row divr" style="border-top:1px solid transparent;"><span class="row-icon" style="color:#FF5900;">⏻</span><div class="row-mid"><div class="row-title txt-p"><span data-i18n="sair">Sair</span></div></div><span class="row-arrow">›</span></div>
     </div>
-    <div class="stit txt-p">Sobre</div><div class="ssub txt-s">Versão: 1.1.93</div>
+    <div class="stit txt-p"><span data-i18n="sobre">Sobre</span></div><div class="ssub txt-s">Versão: 1.1.93</div>
     <div class="config-card card-bg">
-      <div class="card-row"><span class="row-icon">📋</span><div class="row-mid"><div class="row-title txt-p">Termos e Condições</div></div><span class="row-arrow">›</span></div>
+      <div class="card-row"><span class="row-icon">📋</span><div class="row-mid"><div class="row-title txt-p"><span data-i18n="termos">Termos e Condições</span></div></div><span class="row-arrow">›</span></div>
     </div>
   </div>
 </div>
 
 <!-- IDIOMA -->
 <div class="vw hidden" id="v-idioma">
-    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-configs')">←</span><span class="screen-title txt-p">Idioma</span></div>
+    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-configs')">←</span><span class="screen-title txt-p" data-i18n="idioma">Idioma</span></div>
   <div class="sa">
     <div class="lang-opt sel" id="lang-pt" onclick="setLang('pt')"><span class="lang-flag">🇧🇷</span><div><div class="lang-name txt-p">Português</div><div class="lang-native txt-s">Português (Brasil)</div></div><div class="lang-check on" id="lc-pt">✓</div></div>
     <div class="lang-opt" id="lang-en" onclick="setLang('en')"><span class="lang-flag">🇺🇸</span><div><div class="lang-name txt-p">English</div><div class="lang-native txt-s">English (US)</div></div><div class="lang-check" id="lc-en"></div></div>
@@ -418,33 +418,33 @@ input[type=range]{width:100%;accent-color:#FF5900;}
 
 <!-- EDITAR PERFIL -->
 <div class="vw hidden" id="v-editperfil">
-    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-configs')">←</span><span class="screen-title txt-p">Editar Perfil</span></div>
+    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-configs')">←</span><span class="screen-title txt-p" data-i18n="editar_perfil">Editar Perfil</span></div>
   <div class="sa" style="padding-left:0;padding-right:0;">
     <div style="display:flex;flex-direction:column;align-items:center;padding:24px 16px 16px;gap:12px;">
       <div class="edit-av" id="edit-avatar-wrap"><span id="edit-avatar-text">LG</span></div>
-      <button class="change-photo-btn" onclick="changePhoto()">📷 Alterar foto</button>
+      <button class="change-photo-btn" onclick="changePhoto()"><span data-i18n="alterar_foto">📷 Alterar foto</span></button>
       <input type="file" id="photo-input" accept="image/*" style="display:none;" onchange="onPhotoChange(event)">
     </div>
-    <div class="edit-field"><div class="edit-field-label">Nome completo</div><input class="edit-field-input" type="text" id="edit-name-input" value="Luiz Gustavo Neves"></div>
-    <button class="save-btn-prof" onclick="saveProfile()">Salvar</button>
+    <div class="edit-field"><div class="edit-field-label"><span data-i18n="nome_completo">Nome completo</span></div><input class="edit-field-input" type="text" id="edit-name-input" value="Luiz Gustavo Neves"></div>
+    <button class="save-btn-prof" onclick="saveProfile()"><span data-i18n="salvar">Salvar</span></button>
   </div>
 </div>
 
 <!-- COPILOTO -->
 <div class="vw hidden" id="v-copiloto">
-    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-home')">←</span><span class="screen-title txt-p">Ajustes do Copiloto</span></div>
+    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-home')">←</span><span class="screen-title txt-p" data-i18n="ajustes_copiloto">Ajustes do Copiloto</span></div>
   <div class="sa">
-    <div class="stit txt-p">Botão Flutuante</div><div class="ssub txt-s">Ajuste o tamanho e a transparência do botão flutuante</div>
+    <div class="stit txt-p"><span data-i18n="botao_flutuante">Botão Flutuante</span></div><div class="ssub txt-s"><span data-i18n="botao_flutuante_sub">Ajuste o tamanho e a transparência do botão flutuante</span></div>
     <div class="module-card card-bg">
-      <div class="card-row" onclick="cycleSize()"><span class="row-icon">↔️</span><div class="row-mid"><div class="row-title txt-p">Tamanho</div><div class="row-sub txt-s">Escolha entre pequeno, médio ou grande</div></div><span style="font-size:14px;font-weight:600;color:#FF5900;" id="size-label">Grande</span></div>
+      <div class="card-row" onclick="cycleSize()"><span class="row-icon">↔️</span><div class="row-mid"><div class="row-title txt-p">Tamanho</div><div class="row-sub txt-s"><span data-i18n="tamanho_sub">Escolha entre pequeno, médio ou grande</span></div></div><span style="font-size:14px;font-weight:600;color:#FF5900;" id="size-label">Grande</span></div>
       <div style="border-top:1px solid #EAEAEA;padding:13px 16px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><span style="font-size:16px;">👁️</span><span style="flex:1;font-size:14px;font-weight:600;" class="txt-p">Opacidade</span><span style="font-size:14px;font-weight:600;color:#FF5900;" id="op-val">100%</span></div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><span style="font-size:16px;">👁️</span><span style="flex:1;font-size:14px;font-weight:600;" class="txt-p" data-i18n="opacidade">Opacidade</span><span style="font-size:14px;font-weight:600;color:#FF5900;" id="op-val">100%</span></div>
         <input type="range" min="0" max="100" value="100" id="opacity-slider" oninput="document.getElementById('op-val').textContent=this.value+'%';updateFab();">
         <div class="se"><span>0%</span><span>100%</span></div>
       </div>
     </div>
     <div style="margin-top:16px;padding:16px;border-radius:14px;text-align:center;" class="card-bg">
-      <div class="ssub txt-s" style="margin-bottom:12px;">Pré-visualização</div>
+      <div class="ssub txt-s" style="margin-bottom:12px;"><span data-i18n="previa">Pré-visualização</span></div>
       <div style="display:flex;justify-content:center;align-items:center;height:80px;background:#FFF4EC;border-radius:10px;">
         <div id="fab-preview" style="width:52px;height:52px;border-radius:26px;background:#FF5900;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(249,115,22,.4);transition:all .2s;">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 1543.5" height="18" style="display:block"><path fill="#FFFFFA" d="M935.43,145.16c-38.31-32.49-145.26-12.54-191.88-1.65-196.8,45.99-484.02,233.34-553.2,430.59-33.63,95.85-36.33,228.15,90.93,243.48,173.19,20.85,371.88-103.29,487.38-223.14-5.64-7.2-23.97-4.23-32.91-3.54-60.93,4.62-143.76,28.44-198.69,29.49-108.39,2.04-125.1-158.55-7.32-169.41,139.77-12.87,302.91,7.59,444.93,3.63,46.29,25.02,54.12,52.77,50.85,103.08-5.37,82.68-60.81,313.68-86.91,397.62-33.99,109.38-157.59,93.06-169.59,5.67-7.74-56.37,74.28-194.04,80.34-260.04-155.49,196.65-589.71,420.72-785.31,172.35-200.67-254.79,115.74-581.1,323.46-711.33,151.05-94.71,532.23-265.5,663.33-77.25,51.24,73.59,45.36,267.9-67.41,221.52-75.51-31.05-4.5-124.14-48.03-161.07h.03Z"/><path fill="#FFFFFA" d="M1101.57,977.43c-15.81-15.42-27.27-51.3-23.94-73.47,43.8-155.58,54.51-340.59,102.6-492.6,30.39-96,133.8-59.43,132,13.89-41.94,156.45-37.26,361.41-83.13,512.19-17.79,58.41-82.11,84.36-127.53,39.99h0Z"/><path fill="#FFFFFA" d="M1287.81,100.49c162.48-36.9,150.87,188.01,12.09,194.01-126.12,5.46-112.26-171.27-12.09-194.01Z"/><path fill="#FFFFFA" d="M1899.24,921.21c-142.98,115.77-434.55,159.69-506.79-54.78-94.44-280.41,298.47-634.8,570.54-526.5,22.32,8.88,75.84,51.06,80.55,51.9,9.69,1.71,25.11-19.23,43.59-21.21,37.71-4.02,65.49,18.72,68.79,55.95,4.47,50.07-40.71,236.49-54.63,296.49-57.78,249.57-151.59,526.56-364.14,685.71-238.47,178.56-594.81,195.87-796.02-47.01-43.59-52.59-101.73-168,1.77-189.24,84.06-17.25,93.18,48.42,134.31,97.23,109.98,130.62,282.93,141.84,436.92,92.19,192.63-62.13,327.36-255,385.11-440.73h0ZM1809.45,475.25c-104.4,15.3-218.34,118.53-253.44,216.42-85.14,237.33,186.15,189.72,302.73,82.47,102.09-93.9,177.72-332.13-49.26-298.89h-.03Z"/><path fill="#FFFFFA" d="M2367.31,129.8c54.27-10.44,97.8,28.62,97.86,82.92.24,151.83-112.74,393.06-94.08,534.03,20.76,156.81,235.83,134.4,321.42,46.26,99.75-102.75,106.23-443.01,148.5-593.01,31.32-111.12,164.88-88.77,158.79,26.28-5.46,103.05-77.79,483.24-122.67,567.78-90.18,169.89-294.75,244.17-476.94,187.89-174.96-54.03-198.18-219.42-175.5-377.85,15.87-110.94,51.66-311.85,83.49-415.74,8.94-29.13,27.66-52.53,59.19-58.56h-.06Z"/></svg>
@@ -456,74 +456,74 @@ input[type=range]{width:100%;accent-color:#FF5900;}
 
 <!-- GANHO -->
 <div class="vw hidden" id="v-ganho">
-    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-home')">←</span><span class="screen-title txt-p">Cálculo de Ganhos</span><button class="help-btn" onclick="openVisualizar()" style="font-size:11px;font-weight:700;padding:5px 10px;">👁️ VISUALIZAR</button></div>
+    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-home')">←</span><span class="screen-title txt-p" data-i18n="calculo_ganhos">Cálculo de Ganhos</span><button class="help-btn" onclick="openVisualizar()" style="font-size:11px;font-weight:700;padding:5px 10px;">👁️ VISUALIZAR</button></div>
   <div class="sa">
-    <div class="hc card-bg" style="cursor:pointer;" onclick="openHistorico()"><span style="font-size:22px;color:#FF5900;">🕐</span><div class="hm"><div class="ht2 txt-p">Histórico de Corridas</div><div class="hs2">Registro das corridas recebidas</div></div><span style="font-size:20px;color:#8A9099;">›</span></div>
-    <div class="stit txt-p">Aplicativos</div><div class="ssub txt-s">Escolha os apps</div>
+    <div class="hc card-bg" style="cursor:pointer;" onclick="openHistorico()"><span style="font-size:22px;color:#FF5900;">🕐</span><div class="hm"><div class="ht2 txt-p"><span data-i18n="historico_corridas">Histórico de Corridas</span></div><div class="hs2"><span data-i18n="historico_sub">Registro das corridas recebidas</span></div></div><span style="font-size:20px;color:#8A9099;">›</span></div>
+    <div class="stit txt-p"><span data-i18n="aplicativos">Aplicativos</span></div><div class="ssub txt-s"><span data-i18n="aplicativos_sub">Escolha os apps</span></div>
     <div class="ag" id="apps-grid"></div>
-    <div class="stit txt-p">Semáforo de Valores</div>
+    <div class="stit txt-p"><span data-i18n="semaforo">Semáforo de Valores</span></div>
     <div style="margin-bottom:10px;"><div style="font-size:12px;font-weight:500;color:#EF4444;margin-bottom:2px;">● Vermelho para corridas ruins</div><div style="font-size:12px;font-weight:500;color:#F59E0B;margin-bottom:2px;">● Amarelo para corridas intermediárias</div><div style="font-size:12px;font-weight:500;color:#00C853;">● Verde para corridas boas</div></div>
-    <div class="dc card-bg"><div class="dh"><span style="font-size:16px;color:#FF5900;">$</span><span class="dt txt-p">Ganho por Km</span><button class="pencil-btn" onclick="openEdit('km')">✏️</button><span class="ht-tag">❓ AJUDA</span></div><div class="ds" id="ds-km"><div class="dr" id="dr-km"></div><div class="dy" id="dy-km"></div><div class="dg" id="dg-km"></div><div class="btop" id="bt-km"></div><div class="bbot" id="bb-km"></div><div class="dth" id="th-km-lo" data-id="km" data-type="lo"></div><div class="dth" id="th-km-hi" data-id="km" data-type="hi"></div></div><div class="el"><span style="color:#EF4444;">Ruim</span><span style="color:#00C853;">Bom</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A9099;margin-top:3px;"><span>R$ 0,10/km</span><span>R$ 5,00/km</span></div></div>
-    <div class="dc card-bg"><div class="dh"><span style="font-size:16px;color:#FF5900;">$</span><span class="dt txt-p">Ganho por Hora</span><button class="pencil-btn" onclick="openEdit('hr')">✏️</button><span class="ht-tag">❓ AJUDA</span></div><div class="ds" id="ds-hr"><div class="dr" id="dr-hr"></div><div class="dy" id="dy-hr"></div><div class="dg" id="dg-hr"></div><div class="btop" id="bt-hr"></div><div class="bbot" id="bb-hr"></div><div class="dth" id="th-hr-lo" data-id="hr" data-type="lo"></div><div class="dth" id="th-hr-hi" data-id="hr" data-type="hi"></div></div><div class="el"><span style="color:#EF4444;">Ruim</span><span style="color:#00C853;">Bom</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A9099;margin-top:3px;"><span>R$ 2/hr</span><span>R$ 90/hr</span></div></div>
-    <div class="dc card-bg"><div class="dh"><span style="font-size:16px;">⭐</span><span class="dt txt-p">Nota do passageiro</span><button class="pencil-btn" onclick="openEdit('nt')">✏️</button><span class="ht-tag">❓ AJUDA</span></div><div class="ds" id="ds-nt"><div class="dr" id="dr-nt"></div><div class="dy" id="dy-nt"></div><div class="dg" id="dg-nt"></div><div class="btop" id="bt-nt"></div><div class="bbot" id="bb-nt"></div><div class="dth" id="th-nt-lo" data-id="nt" data-type="lo"></div><div class="dth" id="th-nt-hi" data-id="nt" data-type="hi"></div></div><div class="el"><span style="color:#EF4444;">Ruim</span><span style="color:#00C853;">Bom</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A9099;margin-top:3px;"><span>4,00</span><span>5,00</span></div></div>
-    <div class="stit txt-p">Lucro Líquido</div><div class="ssub txt-s">Calcule seu custo por km para ver seu lucro em cada corrida e calibrar seu semáforo</div>
+    <div class="dc card-bg"><div class="dh"><span style="font-size:16px;color:#FF5900;">$</span><span class="dt txt-p" data-i18n="ganho_km">Ganho por Km</span><button class="pencil-btn" onclick="openEdit('km')">✏️</button><span class="ht-tag" data-i18n="ajuda_label">❓ AJUDA</span></div><div class="ds" id="ds-km"><div class="dr" id="dr-km"></div><div class="dy" id="dy-km"></div><div class="dg" id="dg-km"></div><div class="btop" id="bt-km"></div><div class="bbot" id="bb-km"></div><div class="dth" id="th-km-lo" data-id="km" data-type="lo"></div><div class="dth" id="th-km-hi" data-id="km" data-type="hi"></div></div><div class="el"><span style="color:#EF4444;" data-i18n="ruim">Ruim</span><span style="color:#00C853;" data-i18n="bom">Bom</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A9099;margin-top:3px;"><span>R$ 0,10/km</span><span>R$ 5,00/km</span></div></div>
+    <div class="dc card-bg"><div class="dh"><span style="font-size:16px;color:#FF5900;">$</span><span class="dt txt-p" data-i18n="ganho_hora">Ganho por Hora</span><button class="pencil-btn" onclick="openEdit('hr')">✏️</button><span class="ht-tag" data-i18n="ajuda_label">❓ AJUDA</span></div><div class="ds" id="ds-hr"><div class="dr" id="dr-hr"></div><div class="dy" id="dy-hr"></div><div class="dg" id="dg-hr"></div><div class="btop" id="bt-hr"></div><div class="bbot" id="bb-hr"></div><div class="dth" id="th-hr-lo" data-id="hr" data-type="lo"></div><div class="dth" id="th-hr-hi" data-id="hr" data-type="hi"></div></div><div class="el"><span style="color:#EF4444;" data-i18n="ruim">Ruim</span><span style="color:#00C853;" data-i18n="bom">Bom</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A9099;margin-top:3px;"><span>R$ 2/hr</span><span>R$ 90/hr</span></div></div>
+    <div class="dc card-bg"><div class="dh"><span style="font-size:16px;">⭐</span><span class="dt txt-p" data-i18n="nota_passageiro">Nota do passageiro</span><button class="pencil-btn" onclick="openEdit('nt')">✏️</button><span class="ht-tag" data-i18n="ajuda_label">❓ AJUDA</span></div><div class="ds" id="ds-nt"><div class="dr" id="dr-nt"></div><div class="dy" id="dy-nt"></div><div class="dg" id="dg-nt"></div><div class="btop" id="bt-nt"></div><div class="bbot" id="bb-nt"></div><div class="dth" id="th-nt-lo" data-id="nt" data-type="lo"></div><div class="dth" id="th-nt-hi" data-id="nt" data-type="hi"></div></div><div class="el"><span style="color:#EF4444;" data-i18n="ruim">Ruim</span><span style="color:#00C853;" data-i18n="bom">Bom</span></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#8A9099;margin-top:3px;"><span>4,00</span><span>5,00</span></div></div>
+    <div class="stit txt-p"><span data-i18n="lucro_liquido">Lucro Líquido</span></div><div class="ssub txt-s">Calcule seu custo por km para ver seu lucro em cada corrida e calibrar seu semáforo</div>
     <div class="module-card card-bg" style="overflow:visible;border-radius:14px;">
-      <div id="lucro-state-none"><div style="background:#FF5900;border-radius:14px;padding:15px;text-align:center;font-size:14px;font-weight:800;color:white;cursor:pointer;letter-spacing:0.2px;" onclick="openLucroFlow()">Calcule meu lucro e custo por Km</div></div>
+      <div id="lucro-state-none"><div style="background:#FF5900;border-radius:14px;padding:15px;text-align:center;font-size:14px;font-weight:800;color:white;cursor:pointer;letter-spacing:0.2px;" onclick="openLucroFlow()"><span data-i18n="calcule_lucro_btn">Calcule meu lucro e custo por Km</span></div></div>
       <div id="lucro-state-done" style="display:none;">
         <div class="lucro-aplicado-top">
-          <button class="btn-editar" onclick="openEditCalc()">✏️ Editar</button>
-          <button class="btn-detalhes" onclick="go('lf-result')">📊 Detalhes</button>
+          <button class="btn-editar" onclick="openEditCalc()"><span data-i18n="btn_editar">✏️ Editar</span></button>
+          <button class="btn-detalhes" onclick="go('lf-result')"><span data-i18n="btn_detalhes">📊 Detalhes</span></button>
         </div>
         <div class="lucro-custo-km">
-          <div style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#1C1C1C;">🛣️ Custo por Km</div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#1C1C1C;"><span data-i18n="custo_por_km">🛣️ Custo por Km</span></div>
           <div class="lucro-custo-val" id="lucro-custo-km-val">—</div>
         </div>
       </div>
     </div>
-    <div class="stit txt-p">Aparência</div><div class="ssub txt-s">Personalize o cartão e arraste para reordenar</div>
-    <div class="ind-section"><div class="ind-row-lbl">Selecionados (máx. 4)</div><div class="ind-row" id="ind-selected"></div><div class="ind-row-lbl" style="margin-top:10px;">Disponíveis</div><div class="ind-row" id="ind-available"></div></div>
+    <div class="stit txt-p"><span data-i18n="aparencia">Aparência</span></div><div class="ssub txt-s"><span data-i18n="aparencia_sub">Personalize o cartão e arraste para reordenar</span></div>
+    <div class="ind-section"><div class="ind-row-lbl"><span data-i18n="selecionados">Selecionados (máx. 4)</span></div><div class="ind-row" id="ind-selected"></div><div class="ind-row-lbl" style="margin-top:10px;"><span data-i18n="disponiveis">Disponíveis</span></div><div class="ind-row" id="ind-available"></div></div>
     <div class="module-card card-bg">
-      <div class="card-row"><span style="font-size:16px;color:#FF5900;">⬜</span><span style="flex:1;font-size:14px;font-weight:600;margin-left:10px;" class="txt-p">Posição do Cartão</span><span style="font-size:13px;font-weight:600;color:#FF5900;" id="pos-val">Centro</span></div>
+      <div class="card-row"><span style="font-size:16px;color:#FF5900;">⬜</span><span style="flex:1;font-size:14px;font-weight:600;margin-left:10px;" class="txt-p" data-i18n="posicao_cartao">Posição do Cartão</span><span style="font-size:13px;font-weight:600;color:#FF5900;" id="pos-val">Centro</span></div>
       <div class="po"><div class="poo" id="po-E" onclick="setPos('Esquerda')"></div><div class="poo on" id="po-C" onclick="setPos('Centro')"></div><div class="poo" id="po-D" onclick="setPos('Direita')"></div></div>
-      <div style="border-top:1px solid #EAEAEA;"><div class="card-row"><span style="font-size:16px;">◐</span><span style="flex:1;font-size:14px;font-weight:600;margin-left:10px;" class="txt-p">Tema do Cartão</span><span style="font-size:13px;font-weight:600;color:#FF5900;" id="theme-val">Escuro</span></div><div class="to"><div class="too" id="th-Claro" onclick="setTheme('Claro')"></div><div class="too on" id="th-Escuro" onclick="setTheme('Escuro')"></div><div class="too" id="th-Semaforo" onclick="setTheme('Semáforo')"></div></div></div>
-      <div style="border-top:1px solid #EAEAEA;"><div class="card-row" onclick="toggleDaltOpts()"><span style="font-size:16px;">🎨</span><span style="flex:1;font-size:14px;font-weight:600;margin-left:10px;" class="txt-p">Modo Daltônico</span><span style="font-size:13px;font-weight:600;color:#FF5900;" id="dalt-val">Desativado</span><span style="font-size:12px;color:#8A9099;margin-left:4px;" id="dalt-arrow">▼</span></div><div class="dalt-opts" id="dalt-opts"><div class="dalt-opt sel" id="dalt-Desativado" onclick="setDalt('Desativado')">Desativado</div><div class="dalt-opt" id="dalt-Protanopia" onclick="setDalt('Protanopia')">Protanopia</div><div class="dalt-opt" id="dalt-Deuteranopia" onclick="setDalt('Deuteranopia')">Deuteranopia</div><div class="dalt-opt" id="dalt-Tritanopia" onclick="setDalt('Tritanopia')">Tritanopia</div></div></div>
+      <div style="border-top:1px solid #EAEAEA;"><div class="card-row"><span style="font-size:16px;">◐</span><span style="flex:1;font-size:14px;font-weight:600;margin-left:10px;" class="txt-p" data-i18n="tema_cartao">Tema do Cartão</span><span style="font-size:13px;font-weight:600;color:#FF5900;" id="theme-val">Escuro</span></div><div class="to"><div class="too" id="th-Claro" onclick="setTheme('Claro')"></div><div class="too on" id="th-Escuro" onclick="setTheme('Escuro')"></div><div class="too" id="th-Semaforo" onclick="setTheme('Semáforo')"></div></div></div>
+      <div style="border-top:1px solid #EAEAEA;"><div class="card-row" onclick="toggleDaltOpts()"><span style="font-size:16px;">🎨</span><span style="flex:1;font-size:14px;font-weight:600;margin-left:10px;" class="txt-p" data-i18n="modo_daltonico">Modo Daltônico</span><span style="font-size:13px;font-weight:600;color:#FF5900;" id="dalt-val">Desativado</span><span style="font-size:12px;color:#8A9099;margin-left:4px;" id="dalt-arrow">▼</span></div><div class="dalt-opts" id="dalt-opts"><div class="dalt-opt sel" id="dalt-Desativado" onclick="setDalt('Desativado')">Desativado</div><div class="dalt-opt" id="dalt-Protanopia" onclick="setDalt('Protanopia')">Protanopia</div><div class="dalt-opt" id="dalt-Deuteranopia" onclick="setDalt('Deuteranopia')">Deuteranopia</div><div class="dalt-opt" id="dalt-Tritanopia" onclick="setDalt('Tritanopia')">Tritanopia</div></div></div>
     </div>
     <div class="module-card card-bg">
-      <div style="padding:0 16px;"><div style="display:flex;align-items:center;gap:8px;padding-top:13px;padding-bottom:6px;"><span style="font-size:14px;font-weight:600;flex:1;" class="txt-p">👁️ Opacidade do Cartão</span><span style="font-size:14px;font-weight:600;color:#FF5900;" id="opcart-val">100%</span></div><input type="range" min="30" max="100" value="100" oninput="document.getElementById('opcart-val').textContent=this.value+'%'"><div class="se" style="margin-bottom:12px;"><span>30%</span><span>100%</span></div></div>
-      <div style="border-top:1px solid #EAEAEA;padding:0 16px;"><div style="display:flex;align-items:center;gap:8px;padding-top:13px;padding-bottom:6px;"><span style="font-size:14px;font-weight:600;flex:1;" class="txt-p">Tt Tamanho da fonte</span><span style="font-size:14px;font-weight:600;color:#FF5900;" id="font-val">16</span></div><input type="range" min="12" max="18" value="16" oninput="document.getElementById('font-val').textContent=this.value"><div class="se" style="margin-bottom:12px;"><span>12</span><span>18</span></div></div>
-      <div style="border-top:1px solid #EAEAEA;padding:0 16px;"><div style="display:flex;align-items:center;gap:8px;padding-top:13px;padding-bottom:6px;"><span style="font-size:14px;font-weight:600;flex:1;" class="txt-p">🕐 Duração do cartão</span><span style="font-size:14px;font-weight:600;color:#FF5900;" id="dur-val">10 segs</span></div><input type="range" min="3" max="10" value="10" oninput="document.getElementById('dur-val').textContent=this.value+' segs'"><div class="se" style="margin-bottom:12px;"><span>3</span><span>10</span></div></div>
+      <div style="padding:0 16px;"><div style="display:flex;align-items:center;gap:8px;padding-top:13px;padding-bottom:6px;"><span style="font-size:14px;font-weight:600;flex:1;" class="txt-p" data-i18n="opacidade_cartao">👁️ Opacidade do Cartão</span><span style="font-size:14px;font-weight:600;color:#FF5900;" id="opcart-val">100%</span></div><input type="range" min="30" max="100" value="100" oninput="document.getElementById('opcart-val').textContent=this.value+'%'"><div class="se" style="margin-bottom:12px;"><span>30%</span><span>100%</span></div></div>
+      <div style="border-top:1px solid #EAEAEA;padding:0 16px;"><div style="display:flex;align-items:center;gap:8px;padding-top:13px;padding-bottom:6px;"><span style="font-size:14px;font-weight:600;flex:1;" class="txt-p" data-i18n="tamanho_fonte">Tt Tamanho da fonte</span><span style="font-size:14px;font-weight:600;color:#FF5900;" id="font-val">16</span></div><input type="range" min="12" max="18" value="16" oninput="document.getElementById('font-val').textContent=this.value"><div class="se" style="margin-bottom:12px;"><span>12</span><span>18</span></div></div>
+      <div style="border-top:1px solid #EAEAEA;padding:0 16px;"><div style="display:flex;align-items:center;gap:8px;padding-top:13px;padding-bottom:6px;"><span style="font-size:14px;font-weight:600;flex:1;" class="txt-p" data-i18n="duracao_cartao">🕐 Duração do cartão</span><span style="font-size:14px;font-weight:600;color:#FF5900;" id="dur-val">10 segs</span></div><input type="range" min="3" max="10" value="10" oninput="document.getElementById('dur-val').textContent=this.value+' segs'"><div class="se" style="margin-bottom:12px;"><span>3</span><span>10</span></div></div>
     </div>
-    <div class="stit txt-p">Avançado</div><div class="ssub txt-s">Defina automações avançadas em ofertas de corrida</div>
-    <div class="advc card-bg"><span style="font-size:18px;">💬</span><div class="avm"><div class="avt txt-p">Notificação de texto</div><div class="avd">Detalhes da corrida com links rápidos</div></div><div class="tg on" onclick="toggleEl(this)"><div class="tt"></div></div></div>
-    <div class="advc card-bg"><span style="font-size:18px;">🔊</span><div class="avm"><div class="avt txt-p">Notificação de voz</div><div class="avd">Ouça os detalhes da corrida</div></div><div class="tg off" onclick="toggleEl(this)"><div class="tt"></div></div></div>
-    <div class="advc card-bg"><span style="font-size:18px;">📸</span><div class="avm"><div class="avt txt-p">Captura de Tela Automática</div><div class="avd">Salva captura de tela de cada oferta</div></div><div class="tg off" onclick="toggleEl(this)"><div class="tt"></div></div></div>
-    <div class="advc card-bg"><span style="font-size:18px;">💬</span><div class="avm"><div class="avt txt-p">Mensagem para o passageiro</div><div class="avd">Mensagem padrão copiada automaticamente</div></div><div class="tg off" onclick="toggleEl(this)"><div class="tt"></div></div></div>
+    <div class="stit txt-p"><span data-i18n="avancado">Avançado</span></div><div class="ssub txt-s"><span data-i18n="avancado_sub">Defina automações avançadas em ofertas de corrida</span></div>
+    <div class="advc card-bg"><span style="font-size:18px;">💬</span><div class="avm"><div class="avt txt-p"><span data-i18n="notif_texto">Notificação de texto</span></div><div class="avd"><span data-i18n="notif_texto_sub">Detalhes da corrida com links rápidos</span></div></div><div class="tg on" onclick="toggleEl(this)"><div class="tt"></div></div></div>
+    <div class="advc card-bg"><span style="font-size:18px;">🔊</span><div class="avm"><div class="avt txt-p"><span data-i18n="notif_voz">Notificação de voz</span></div><div class="avd"><span data-i18n="notif_voz_sub">Ouça os detalhes da corrida</span></div></div><div class="tg off" onclick="toggleEl(this)"><div class="tt"></div></div></div>
+    <div class="advc card-bg"><span style="font-size:18px;">📸</span><div class="avm"><div class="avt txt-p"><span data-i18n="captura_auto">Captura de Tela Automática</span></div><div class="avd"><span data-i18n="captura_auto_sub">Salva captura de tela de cada oferta</span></div></div><div class="tg off" onclick="toggleEl(this)"><div class="tt"></div></div></div>
+    <div class="advc card-bg"><span style="font-size:18px;">💬</span><div class="avm"><div class="avt txt-p"><span data-i18n="msg_passageiro">Mensagem para o passageiro</span></div><div class="avd"><span data-i18n="msg_passageiro_sub">Mensagem padrão copiada automaticamente</span></div></div><div class="tg off" onclick="toggleEl(this)"><div class="tt"></div></div></div>
   </div>
 </div>
 
 <!-- CAMERA -->
 <div class="vw hidden" id="v-camera">
-    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-home')">←</span><span class="screen-title txt-p">Câmera Secreta</span></div>
+    <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;"><span class="bk txt-p" onclick="go('v-home')">←</span><span class="screen-title txt-p" data-i18n="camera_secreta">Câmera Secreta</span></div>
   <div class="sa">
-    <div class="hc card-bg"><span style="font-size:22px;color:#FF5900;">▶️</span><div class="hm"><div class="ht2 txt-p">Gravações</div><div class="hs2">Ver e gerenciar suas gravações</div></div><span style="font-size:20px;color:#8A9099;">›</span></div>
+    <div class="hc card-bg"><span style="font-size:22px;color:#FF5900;">▶️</span><div class="hm"><div class="ht2 txt-p">Gravações</div><div class="hs2"><span data-i18n="gravacoes_sub">Ver e gerenciar suas gravações</span></div></div><span style="font-size:20px;color:#8A9099;">›</span></div>
     <div class="module-card card-bg">
-      <div class="cr"><span style="font-size:18px;width:24px;text-align:center;">📷</span><div class="cm"><div class="cl txt-p">Lente</div><div class="cd">Defina a lente padrão</div></div><span class="cv">Frontal</span></div>
-      <div class="cr"><span style="font-size:18px;width:24px;text-align:center;">▶️</span><div class="cm"><div class="cl txt-p">Qualidade de gravação</div><div class="cd">Selecione a qualidade do vídeo</div></div><span class="cv">Média</span></div>
-      <div class="cr"><span style="font-size:18px;width:24px;text-align:center;">🎬</span><div class="cm"><div class="cl txt-p">Cortes de gravação</div><div class="cd">Divida a gravação em vídeos menores</div></div><span class="cv">5 min</span></div>
-      <div class="cr"><span style="font-size:18px;width:24px;text-align:center;">⏱️</span><div class="cm"><div class="cl txt-p">Tempo limite de gravação</div><div class="cd">Defina um limite de tempo</div></div><span class="cv">1 hora</span></div>
-      <div class="cr"><span style="font-size:18px;width:24px;text-align:center;">⬇️</span><div class="cm"><div class="cl txt-p">Armazenamento</div><div class="cd">Escolha onde salvar gravações</div></div><span class="cv">Local</span></div>
+      <div class="cr"><span style="font-size:18px;width:24px;text-align:center;">📷</span><div class="cm"><div class="cl txt-p"><span data-i18n="lente">Lente</span></div><div class="cd"><span data-i18n="lente_sub">Defina a lente padrão</span></div></div><span class="cv">Frontal</span></div>
+      <div class="cr"><span style="font-size:18px;width:24px;text-align:center;">▶️</span><div class="cm"><div class="cl txt-p"><span data-i18n="qualidade">Qualidade de gravação</span></div><div class="cd"><span data-i18n="qualidade_sub">Selecione a qualidade do vídeo</span></div></div><span class="cv">Média</span></div>
+      <div class="cr"><span style="font-size:18px;width:24px;text-align:center;">🎬</span><div class="cm"><div class="cl txt-p"><span data-i18n="cortes">Cortes de gravação</span></div><div class="cd"><span data-i18n="cortes_sub">Divida a gravação em vídeos menores</span></div></div><span class="cv">5 min</span></div>
+      <div class="cr"><span style="font-size:18px;width:24px;text-align:center;">⏱️</span><div class="cm"><div class="cl txt-p"><span data-i18n="tempo_limite">Tempo limite de gravação</span></div><div class="cd"><span data-i18n="tempo_limite_sub">Defina um limite de tempo</span></div></div><span class="cv">1 hora</span></div>
+      <div class="cr"><span style="font-size:18px;width:24px;text-align:center;">⬇️</span><div class="cm"><div class="cl txt-p"><span data-i18n="armazenamento">Armazenamento</span></div><div class="cd"><span data-i18n="armazenamento_sub">Escolha onde salvar gravações</span></div></div><span class="cv">Local</span></div>
     </div>
   </div>
 </div>
 
 <!-- LUCRO: INTRO -->
 <div class="vw hidden" id="lf-intro">
-    <div class="lf-hdr"><span class="lf-x" onclick="go('v-ganho')">✕</span><span class="lf-title">Calcular Lucro e Custo por Km</span></div>
+    <div class="lf-hdr"><span class="lf-x" onclick="go('v-ganho')">✕</span><span class="lf-title" data-i18n="calc_lucro_titulo">Calcular Lucro e Custo por Km</span></div>
   <div style="flex:1;overflow-y:auto;background:white;">
     <div class="intro-banner">
       <div style="display:flex;height:100%;padding:12px;gap:6px;">
         <div style="background:white;border-radius:8px;flex:1;padding:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.2);">
-          <div style="font-size:7px;font-weight:700;color:#FF5900;margin-bottom:2px;">Lucro Mensal</div>
+          <div style="font-size:7px;font-weight:700;color:#FF5900;margin-bottom:2px;" data-i18n="lucro_mensal_label">Lucro Mensal</div>
           <div style="font-size:14px;font-weight:900;color:#1C1C1C;margin-bottom:5px;">R$ 3.640 <span style="font-size:7px;color:#888;">(46,7%)</span></div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;">
             <div style="background:#FFF4EC;border-radius:4px;padding:4px;"><div style="font-size:6px;color:#888;">Ganho/Km</div><div style="font-size:8px;font-weight:700;">R$1,80/km</div></div>
@@ -540,31 +540,31 @@ input[type=range]{width:100%;accent-color:#FF5900;}
       <div class="play-circle"><div class="play-tri"></div></div>
     </div>
     <div style="padding:22px 20px 0;">
-      <div style="font-size:18px;font-weight:800;color:#1C1C1C;line-height:1.4;margin-bottom:18px;">Analise seus custos e descubra quanto você realmente está lucrando!</div>
-      <div class="bullet"><div class="dot"></div><div class="bullet-t">Veja detalhes do lucro de cada corrida no cartão e no histórico de corridas</div></div>
-      <div class="bullet"><div class="dot"></div><div class="bullet-t">Aplique facilmente os valores /km e /hr sugeridos ao Semáforo de Valores</div></div>
-      <div class="bullet"><div class="dot"></div><div class="bullet-t">Simule ganhos maiores para testar metas mais ousadas</div></div>
+      <div style="font-size:18px;font-weight:800;color:#1C1C1C;line-height:1.4;margin-bottom:18px;" data-i18n="analise_custos">Analise seus custos e descubra quanto você realmente está lucrando!</div>
+      <div class="bullet"><div class="dot"></div><div class="bullet-t" data-i18n="bullet1">Veja detalhes do lucro de cada corrida no cartão e no histórico de corridas</div></div>
+      <div class="bullet"><div class="dot"></div><div class="bullet-t" data-i18n="bullet2">Aplique facilmente os valores /km e /hr sugeridos ao Semáforo de Valores</div></div>
+      <div class="bullet"><div class="dot"></div><div class="bullet-t" data-i18n="bullet3">Simule ganhos maiores para testar metas mais ousadas</div></div>
     </div>
-    <button style="margin:22px 20px 6px;background:#FF5900;border:none;border-radius:14px;padding:18px;width:calc(100% - 40px);font-size:17px;font-weight:700;color:white;cursor:pointer;" onclick="startWizard()">Vamos começar</button>
-    <div style="text-align:center;font-size:13px;color:#999;font-style:italic;padding-bottom:24px;">Leva menos de 5 minutinhos</div>
+    <button style="margin:22px 20px 6px;background:#FF5900;border:none;border-radius:14px;padding:18px;width:calc(100% - 40px);font-size:17px;font-weight:700;color:white;cursor:pointer;" onclick="startWizard()"><span data-i18n="vamos_comecar">Vamos começar</span></button>
+    <div style="text-align:center;font-size:13px;color:#999;font-style:italic;padding-bottom:24px;" data-i18n="leva_menos">Leva menos de 5 minutinhos</div>
   </div>
 </div>
 
 <!-- WIZARD -->
 <div class="vw hidden" id="lf-wizard">
-    <div class="lf-hdr"><span class="lf-x" onclick="go('v-ganho')">✕</span><span class="lf-title">Calcular Lucro e Custo por Km</span></div>
+    <div class="lf-hdr"><span class="lf-x" onclick="go('v-ganho')">✕</span><span class="lf-title" data-i18n="calc_lucro_titulo">Calcular Lucro e Custo por Km</span></div>
   <div class="lf-prog"><div class="lf-bar" id="lf-prog-bar" style="width:5%"></div></div>
   <div class="lf-content" id="lf-content"></div>
-  <div class="lf-footer"><button class="lf-back" onclick="lfPrev()">‹ Voltar</button><button class="lf-next off" id="lf-btn-next" onclick="lfNext()">Próximo ›</button></div>
+  <div class="lf-footer"><button class="lf-back" onclick="lfPrev()"><span data-i18n="voltar">‹ Voltar</span></button><button class="lf-next off" id="lf-btn-next" onclick="lfNext()" data-i18n="proximo">Próximo ›</button></div>
 </div>
 
 <!-- LOADING -->
 <div class="vw hidden" id="lf-loading">
-    <div class="lf-hdr"><span class="lf-x" onclick="go('v-ganho')">✕</span><span class="lf-title">Calcular Lucro e Custo por Km</span></div>
+    <div class="lf-hdr"><span class="lf-x" onclick="go('v-ganho')">✕</span><span class="lf-title" data-i18n="calc_lucro_titulo">Calcular Lucro e Custo por Km</span></div>
   <div class="lf-prog"><div class="lf-bar" style="width:100%"></div></div>
   <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:20px;background:white;">
     <div class="appear-card">
-      <div class="appear-title">Aparência</div><div class="appear-sub">Personalize o cartão e arraste para reordenar</div>
+      <div class="appear-title"><span data-i18n="aparencia">Aparência</span></div><div class="appear-sub"><span data-i18n="aparencia_sub">Personalize o cartão e arraste para reordenar</span></div>
       <div class="ind-mini-row">
         <div class="ind-chip"><span style="font-size:10px;color:#888;font-weight:700;">1</span><div class="ind-chk">✓</div><span style="font-size:11px;font-weight:600;">$/Km</span></div>
         <div class="ind-chip"><span style="font-size:10px;color:#888;font-weight:700;">2</span><div class="ind-chk">✓</div><span style="font-size:11px;font-weight:600;">$/Hora</span></div>
@@ -589,29 +589,29 @@ input[type=range]{width:100%;accent-color:#FF5900;}
   <div style="flex:1;overflow-y:auto;background:white;">
     <div style="margin:12px 16px;background:white;border-radius:14px;border:1px solid #F2F2F7;box-shadow:0 1px 4px rgba(0,0,0,.06);padding:16px;">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-        <div style="font-size:16px;font-weight:700;color:#1C1C1C;" id="res-period-title">Lucro Mensal</div>
+        <div style="font-size:16px;font-weight:700;color:#1C1C1C;" id="res-period-title" data-i18n="lucro_mensal_r">Lucro Mensal</div>
         <div style="display:flex;gap:8px;">
-          <button class="period-tag off" onclick="setPeriod('dia',this)">DIA</button>
-          <button class="period-tag off" onclick="setPeriod('semana',this)">SEMANA</button>
-          <button class="period-tag on" onclick="setPeriod('mes',this)">MÊS</button>
+          <button class="period-tag off" onclick="setPeriod('dia',this)" data-i18n="periodo_dia">DIA</button>
+          <button class="period-tag off" onclick="setPeriod('semana',this)" data-i18n="periodo_semana">SEMANA</button>
+          <button class="period-tag on" onclick="setPeriod('mes',this)" data-i18n="periodo_mes">MÊS</button>
         </div>
       </div>
       <div style="font-size:13px;margin-bottom:4px;"><span style="color:#00C853;font-weight:700;" id="res-bruto-eq">—</span> - <span style="color:#EF4444;font-weight:700;" id="res-custo-eq">—</span> =</div>
       <div><span style="font-size:34px;font-weight:900;color:#1C1C1C;" id="res-lucro">—</span><span style="font-size:16px;font-weight:600;color:#666;margin-left:6px;" id="res-pct">—</span></div>
       <div class="res-grid">
-        <div class="res-card"><div class="rc-lbl">Ganho por Km</div><div class="rc-val" id="ganho-km-r">—</div></div>
-        <div class="res-card"><div class="rc-lbl">Custo por Km</div><div class="rc-val" id="custo-km-r">—</div></div>
-        <div class="res-card"><div class="rc-lbl">Ganho por Hora</div><div class="rc-val" id="ganho-hr-r">—</div></div>
-        <div class="res-card"><div class="rc-lbl">Custo por Hora</div><div class="rc-val" id="custo-hr-r">—</div></div>
+        <div class="res-card"><div class="rc-lbl"><span data-i18n="ganho_km">Ganho por Km</span></div><div class="rc-val" id="ganho-km-r">—</div></div>
+        <div class="res-card"><div class="rc-lbl" data-i18n="custo_km">Custo por Km</div><div class="rc-val" id="custo-km-r">—</div></div>
+        <div class="res-card"><div class="rc-lbl"><span data-i18n="ganho_hora">Ganho por Hora</span></div><div class="rc-val" id="ganho-hr-r">—</div></div>
+        <div class="res-card"><div class="rc-lbl" data-i18n="custo_hora">Custo por Hora</div><div class="rc-val" id="custo-hr-r">—</div></div>
       </div>
       <div class="sim-card">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><div style="font-size:14px;font-weight:600;color:#1C1C1C;">Simule Ganhos Maiores ❓</div><div style="font-size:14px;font-weight:700;color:#FF5900;background:#FFF4EC;padding:2px 8px;border-radius:6px;" id="sim-pct-lbl">+0%</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><div style="font-size:14px;font-weight:600;color:#1C1C1C;"><span data-i18n="simule_ganhos">Simule Ganhos Maiores ❓</span></div><div style="font-size:14px;font-weight:700;color:#FF5900;background:#FFF4EC;padding:2px 8px;border-radius:6px;" id="sim-pct-lbl">+0%</div></div>
         <input type="range" style="width:100%;accent-color:#FF5900;" min="0" max="100" value="0" id="sim-slider" oninput="updateSim(this.value)">
       </div>
-      <button class="apply-btn" onclick="showConfirmModal()">Aplicar $/Km e $/Hr no Semáforo</button>
+      <button class="apply-btn" onclick="showConfirmModal()"><span data-i18n="aplicar_semaforo">Aplicar $/Km e $/Hr no Semáforo</span></button>
     </div>
     <div class="costs-section">
-      <div style="font-size:17px;font-weight:700;color:#1C1C1C;margin-bottom:4px;" id="costs-title">Custos Mensais</div>
+      <div style="font-size:17px;font-weight:700;color:#1C1C1C;margin-bottom:4px;" id="costs-title" data-i18n="custos_mensais">Custos Mensais</div>
       <div class="costs-total" id="costs-total">—</div>
       <div id="costs-list"></div>
     </div>
@@ -625,12 +625,12 @@ input[type=range]{width:100%;accent-color:#FF5900;}
       <button class="ec-close-btn" onclick="ecClose()">✕</button>
       <span class="ec-title">Editar Cálculo</span>
     </div>
-    <button class="ec-reset-btn" onclick="ecReset()">↺ RESETAR</button>
+    <button class="ec-reset-btn" onclick="ecReset()"><span data-i18n="resetar">↺ RESETAR</span></button>
   </div>
   <div class="ec-scroll" id="ec-scroll">
-    <div class="ec-section-title">Informações de Trabalho</div>
+    <div class="ec-section-title"><span data-i18n="info_trabalho">Informações de Trabalho</span></div>
     <div class="ec-card">
-      <div class="ec-card-sub">Dias trabalhados por semana</div>
+      <div class="ec-card-sub"><span data-i18n="dias_semana">Dias trabalhados por semana</span></div>
       <div class="dias-grid" id="ec-dias-grid"></div>
       <div class="two-col-ec">
         <div>
@@ -645,20 +645,20 @@ input[type=range]{width:100%;accent-color:#FF5900;}
       <div class="field-lbl-ec">Meta semanal</div>
       <div class="full-inp-ec"><span class="pfx-ec">R$</span><input type="number" id="ec-meta" placeholder="1.800,00" oninput="ecRecalc()"></div>
     </div>
-    <div class="ec-section-title">Informações do Veículo</div>
+    <div class="ec-section-title"><span data-i18n="info_veiculo">Informações do Veículo</span></div>
     <div class="ec-card">
-      <div class="ec-card-sub">Tipo de Veículo</div>
+      <div class="ec-card-sub"><span data-i18n="tipo_veiculo">Tipo de Veículo</span></div>
       <div class="veic-grid-ec" id="ec-veic-grid"></div>
-      <div class="ec-card-sub">Situação do Veículo</div>
+      <div class="ec-card-sub"><span data-i18n="situacao_veiculo">Situação do Veículo</span></div>
       <div class="status-grid-ec" id="ec-status-grid"></div>
     </div>
-    <div class="ec-section-title">Categorias</div>
+    <div class="ec-section-title"><span data-i18n="categorias">Categorias</span></div>
     <div class="ec-card"><div class="cat-wrap-ec" id="ec-cat-wrap"></div></div>
-    <div class="ec-section-title">Custos</div>
+    <div class="ec-section-title"><span data-i18n="custos">Custos</span></div>
     <div class="ec-card" id="ec-custos-card"></div>
     <div class="ec-section-title">Combustível</div>
     <div class="ec-card">
-      <div class="ec-card-sub">Tipo de Combustível</div>
+      <div class="ec-card-sub"><span data-i18n="tipo_combustivel">Tipo de Combustível</span></div>
       <div class="comb-grid-ec" id="ec-comb-grid"></div>
       <div id="ec-comb-inputs"></div>
     </div>
@@ -669,7 +669,7 @@ input[type=range]{width:100%;accent-color:#FF5900;}
       <div class="ec-footer-lbl">Custo por Km</div>
       <div class="ec-footer-val" id="ec-footer-val">R$ 0,00 /km</div>
     </div>
-    <button class="ec-save-btn" onclick="ecSave()">Salvar</button>
+    <button class="ec-save-btn" onclick="ecSave()"><span data-i18n="salvar">Salvar</span></button>
   </div>
 </div>
 
@@ -681,7 +681,7 @@ input[type=range]{width:100%;accent-color:#FF5900;}
     <span class="screen-title txt-p">Demo</span>
   </div>
   <div class="sa" style="padding:12px;">
-    <div style="font-size:12px;color:#8A9099;margin-bottom:10px;font-weight:600;">Toque em uma corrida para ver a análise GigU</div>
+    <div style="font-size:12px;color:#8A9099;margin-bottom:10px;font-weight:600;"><span data-i18n="demo_hint"><span data-i18n="demo_hint">Toque em uma corrida para ver a análise GigU</span></span></div>
     <div id="demo-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;"></div>
   </div>
 
@@ -707,7 +707,7 @@ input[type=range]{width:100%;accent-color:#FF5900;}
 <div class="vw hidden" id="v-historico">
   <div class="screen-hdr top-bar" style="border-bottom:1px solid transparent;">
     <span class="bk txt-p" onclick="go('v-ganho')">←</span>
-    <span class="screen-title txt-p">Histórico de Corridas</span>
+    <span class="screen-title txt-p" data-i18n="historico_corridas">Histórico de Corridas</span>
     <div style="display:flex;gap:8px;margin-left:auto;">
       <button onclick="histRefresh()" style="background:none;border:none;font-size:18px;cursor:pointer;color:#8A9099;padding:4px;">↻</button>
       <button onclick="histClearConfirm()" style="background:none;border:none;font-size:18px;cursor:pointer;color:#EF4444;padding:4px;">🗑</button>
@@ -716,10 +716,10 @@ input[type=range]{width:100%;accent-color:#FF5900;}
   <!-- Filtros -->
   <div style="display:flex;gap:8px;padding:10px 12px;flex-shrink:0;background:white;border-bottom:1px solid #EAEAEA;">
     <button id="hist-filter-data" onclick="histFilterData()" style="flex:1;border:1.5px solid #EAEAEA;border-radius:10px;padding:8px 6px;font-size:12px;font-weight:700;background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;color:#1C1C1C;">
-      📅 <span id="hist-filter-data-lbl">Tudo</span>
+      📅 <span id="hist-filter-data-lbl" data-i18n="tudo">Tudo</span>
     </button>
     <button id="hist-filter-app" onclick="histFilterApp()" style="flex:1;border:1.5px solid #EAEAEA;border-radius:10px;padding:8px 6px;font-size:12px;font-weight:700;background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;color:#1C1C1C;">
-      📱 <span id="hist-filter-app-lbl">Todos Apps</span>
+      📱 <span id="hist-filter-app-lbl" data-i18n="todos_apps">Todos Apps</span>
     </button>
   </div>
   <!-- Contador -->
@@ -780,10 +780,10 @@ input[type=range]{width:100%;accent-color:#FF5900;}
     <div class="edit-title-s txt-p" id="edit-title">Editar</div>
     <div class="edit-sub-s">Edite diretamente os valores se estiver com dificuldade de arrastar os sliders</div>
     <div class="edit-fields">
-      <div class="edit-field-s"><div class="edit-field-label-s" style="color:#EF4444;">Ruim</div><div class="edit-input-wrap"><span style="font-size:15px;font-weight:700;" id="edit-prefix-lo" class="txt-p">R$</span><input class="edit-input" type="number" id="edit-lo"><span class="edit-input-sfx" id="edit-suffix-lo">/km</span></div></div>
-      <div class="edit-field-s"><div class="edit-field-label-s" style="color:#00C853;">Bom</div><div class="edit-input-wrap"><span style="font-size:15px;font-weight:700;" id="edit-prefix-hi" class="txt-p">R$</span><input class="edit-input" type="number" id="edit-hi"><span class="edit-input-sfx" id="edit-suffix-hi">/km</span></div></div>
+      <div class="edit-field-s"><div class="edit-field-label-s" style="color:#EF4444;"><span data-i18n="ruim">Ruim</span></div><div class="edit-input-wrap"><span style="font-size:15px;font-weight:700;" id="edit-prefix-lo" class="txt-p">R$</span><input class="edit-input" type="number" id="edit-lo"><span class="edit-input-sfx" id="edit-suffix-lo">/km</span></div></div>
+      <div class="edit-field-s"><div class="edit-field-label-s" style="color:#00C853;"><span data-i18n="bom">Bom</span></div><div class="edit-input-wrap"><span style="font-size:15px;font-weight:700;" id="edit-prefix-hi" class="txt-p">R$</span><input class="edit-input" type="number" id="edit-hi"><span class="edit-input-sfx" id="edit-suffix-hi">/km</span></div></div>
     </div>
-    <button class="edit-save-btn" onclick="saveEdit()">Salvar</button>
+    <button class="edit-save-btn" onclick="saveEdit()"><span data-i18n="salvar">Salvar</span></button>
   </div>
 </div>
 
@@ -795,22 +795,22 @@ input[type=range]{width:100%;accent-color:#FF5900;}
       <div class="sema-bottom"><div class="sema-app-badge" id="viz-app-badge">UBER</div><span class="sema-time">32 min · 15.2 km</span></div>
     </div>
   </div>
-  <div class="viz-sheet"><div class="viz-sheet-handle"></div><button class="viz-sheet-close" onclick="closeVisualizar()">✕</button><div class="viz-title">Entenda os Indicadores</div><div class="viz-sub">Distâncias e tempos incluem o deslocamento.</div><div id="viz-indicators"></div></div>
+  <div class="viz-sheet"><div class="viz-sheet-handle"></div><button class="viz-sheet-close" onclick="closeVisualizar()">✕</button><div class="viz-title"><span data-i18n="entenda_indicadores">Entenda os Indicadores</span></div><div class="viz-sub"><span data-i18n="distancias_info">Distâncias e tempos incluem o deslocamento.</span></div><div id="viz-indicators"></div></div>
 </div>
 
 <div class="modal-ov hidden" id="modal-confirm">
   <div class="modal-dim" onclick="closeModal()"></div>
   <div class="modal-sheet">
-    <div style="font-size:18px;font-weight:700;color:#1C1C1C;margin-bottom:20px;">Confirme os valores sugeridos</div>
+    <div style="font-size:18px;font-weight:700;color:#1C1C1C;margin-bottom:20px;"><span data-i18n="confirme_valores">Confirme os valores sugeridos</span></div>
     <div style="margin-bottom:32px;">
-      <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:6px;"><span style="color:#EF4444;">Ruim</span><span style="color:#00C853;">Bom</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:6px;"><span style="color:#EF4444;" data-i18n="ruim">Ruim</span><span style="color:#00C853;" data-i18n="bom">Bom</span></div>
       <div class="slider-track"><div class="sthumb-bom" id="st-bom-km" style="left:55%">—</div><div class="sthumb-ruim" id="st-ruim-km" style="left:40%">—</div></div>
     </div>
     <div style="margin-bottom:16px;">
-      <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:6px;"><span style="color:#EF4444;">Ruim</span><span style="color:#00C853;">Bom</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:6px;"><span style="color:#EF4444;" data-i18n="ruim">Ruim</span><span style="color:#00C853;" data-i18n="bom">Bom</span></div>
       <div class="slider-track"><div class="sthumb-bom" id="st-bom-hr" style="left:50%">—</div><div class="sthumb-ruim" id="st-ruim-hr" style="left:35%">—</div></div>
     </div>
-    <div class="modal-btns"><button class="modal-cancel" onclick="closeModal()">Cancelar</button><button class="modal-confirm" onclick="confirmValues()">Confirmar</button></div>
+    <div class="modal-btns"><button class="modal-cancel" onclick="closeModal()"><span data-i18n="cancelar">Cancelar</span></button><button class="modal-confirm" onclick="confirmValues()"><span data-i18n="confirmar">Confirmar</span></button></div>
   </div>
 </div>
 
@@ -820,11 +820,11 @@ input[type=range]{width:100%;accent-color:#FF5900;}
 </div>
 <div class="fab-menu hidden" id="fab-menu-global">
   <div class="fab-top">
-    <div class="fab-btn" onclick="toggleFabCamera()"><div class="fab-circle gray" id="fab-cam-circle">📷</div><span class="fab-lbl">Câmera</span></div>
+    <div class="fab-btn" onclick="toggleFabCamera()"><div class="fab-circle gray" id="fab-cam-circle">📷</div><span class="fab-lbl"><span data-i18n="camera_fab">Câmera</span></div>
     <div class="fab-gigu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 1543.5" height="16" style="display:block"><path fill="#FFFFFA" d="M935.43,145.16c-38.31-32.49-145.26-12.54-191.88-1.65-196.8,45.99-484.02,233.34-553.2,430.59-33.63,95.85-36.33,228.15,90.93,243.48,173.19,20.85,371.88-103.29,487.38-223.14-5.64-7.2-23.97-4.23-32.91-3.54-60.93,4.62-143.76,28.44-198.69,29.49-108.39,2.04-125.1-158.55-7.32-169.41,139.77-12.87,302.91,7.59,444.93,3.63,46.29,25.02,54.12,52.77,50.85,103.08-5.37,82.68-60.81,313.68-86.91,397.62-33.99,109.38-157.59,93.06-169.59,5.67-7.74-56.37,74.28-194.04,80.34-260.04-155.49,196.65-589.71,420.72-785.31,172.35-200.67-254.79,115.74-581.1,323.46-711.33,151.05-94.71,532.23-265.5,663.33-77.25,51.24,73.59,45.36,267.9-67.41,221.52-75.51-31.05-4.5-124.14-48.03-161.07h.03Z"/><path fill="#FFFFFA" d="M1101.57,977.43c-15.81-15.42-27.27-51.3-23.94-73.47,43.8-155.58,54.51-340.59,102.6-492.6,30.39-96,133.8-59.43,132,13.89-41.94,156.45-37.26,361.41-83.13,512.19-17.79,58.41-82.11,84.36-127.53,39.99h0Z"/><path fill="#FFFFFA" d="M1287.81,100.49c162.48-36.9,150.87,188.01,12.09,194.01-126.12,5.46-112.26-171.27-12.09-194.01Z"/><path fill="#FFFFFA" d="M1899.24,921.21c-142.98,115.77-434.55,159.69-506.79-54.78-94.44-280.41,298.47-634.8,570.54-526.5,22.32,8.88,75.84,51.06,80.55,51.9,9.69,1.71,25.11-19.23,43.59-21.21,37.71-4.02,65.49,18.72,68.79,55.95,4.47,50.07-40.71,236.49-54.63,296.49-57.78,249.57-151.59,526.56-364.14,685.71-238.47,178.56-594.81,195.87-796.02-47.01-43.59-52.59-101.73-168,1.77-189.24,84.06-17.25,93.18,48.42,134.31,97.23,109.98,130.62,282.93,141.84,436.92,92.19,192.63-62.13,327.36-255,385.11-440.73h0ZM1809.45,475.25c-104.4,15.3-218.34,118.53-253.44,216.42-85.14,237.33,186.15,189.72,302.73,82.47,102.09-93.9,177.72-332.13-49.26-298.89h-.03Z"/><path fill="#FFFFFA" d="M2367.31,129.8c54.27-10.44,97.8,28.62,97.86,82.92.24,151.83-112.74,393.06-94.08,534.03,20.76,156.81,235.83,134.4,321.42,46.26,99.75-102.75,106.23-443.01,148.5-593.01,31.32-111.12,164.88-88.77,158.79,26.28-5.46,103.05-77.79,483.24-122.67,567.78-90.18,169.89-294.75,244.17-476.94,187.89-174.96-54.03-198.18-219.42-175.5-377.85,15.87-110.94,51.66-311.85,83.49-415.74,8.94-29.13,27.66-52.53,59.19-58.56h-.06Z"/></svg></div>
-    <div class="fab-btn" onclick="toggleFabGanhos()"><div class="fab-circle green" id="fab-gan-circle">💰</div><span class="fab-lbl">Ganhos</span></div>
+    <div class="fab-btn" onclick="toggleFabGanhos()"><div class="fab-circle green" id="fab-gan-circle">💰</div><span class="fab-lbl"><span data-i18n="ganhos_fab">Ganhos</span></div>
   </div>
-  <div class="fab-bottom"><div class="fab-link"><span class="fab-link-icon">🎬</span><span class="fab-link-lbl">Minhas Gravações</span></div><div class="fab-link"><span class="fab-link-icon">📊</span><span class="fab-link-lbl">Histórico Corridas</span></div></div>
+  <div class="fab-bottom"><div class="fab-link"><span class="fab-link-icon">🎬</span><span class="fab-link-lbl"><span data-i18n="minhas_gravacoes">Minhas Gravações</span></div><div class="fab-link"><span class="fab-link-icon">📊</span><span class="fab-link-lbl"><span data-i18n="historico_corridas_fab">Histórico Corridas</span></div></div>
 </div>
 
 </div></div>
@@ -834,13 +834,13 @@ input[type=range]{width:100%;accent-color:#FF5900;}
   <button class="nb" onclick="go('v-ganho');setTimeout(()=>{initSliders();renderIndicators();renderAppsGrid();renderPosOptions();renderThemeOptions();},100)">Ganhos</button>
   <button class="nb" onclick="go('v-perfil')">Perfil</button>
   <button class="nb" onclick="go('v-configs')">Config.</button>
-  <button class="nb" onclick="go('v-idioma')">Idioma</button>
+  <button class="nb" onclick="go('v-idioma')"><span data-i18n="idioma">Idioma</span></button>
   <button class="nb" onclick="openLucroFlow()">Lucro Intro</button>
   <button class="nb" onclick="startWizard()">Wizard</button>
   <button class="nb" onclick="go('lf-loading')">Loading</button>
   <button class="nb" onclick="go('lf-result');buildResult()">Resultado</button>
   <button class="nb" onclick="openEditCalc()">Editar Cálculo</button>
-  <button class="nb" onclick="go('v-copiloto')">Copiloto</button>
+  <button class="nb" onclick="go('v-copiloto')"><span data-i18n="copiloto">Copiloto</span></button>
   <button class="nb" onclick="go('v-camera')">Câmera</button>
   <button class="nb" onclick="openDemo()">Demo</button>
 </div>
@@ -926,7 +926,7 @@ function renderStep(id){
   const bar=document.getElementById('lf-prog-bar');
   if(bar)bar.style.width=progPct(id)+'%';
   const btn=document.getElementById('lf-btn-next');
-  if(btn){btn.className='lf-next '+(isValid(id)?'on':'off');btn.textContent=stepIdx(id)===totalS()-1?'Calcular ›':'Próximo ›';}
+  if(btn){btn.className='lf-next '+(isValid(id)?'on':'off');btn.textContent=stepIdx(id)===totalS()-1?t('calcular'):t('proximo');}
   const c=document.getElementById('lf-content');
   if(!c)return;c.innerHTML='';
   const R={dias:rDias,horas:rHoras,km:rKm,meta:rMeta,veiculo:rVeiculo,categ:rCateg,status:rStatus,financ:rFinanc,manut:rManut,seguro:rSeguro,outros:rOutros,ipva:rIpva,comb:rComb,auto:rAuto,preco:rPreco};
@@ -944,22 +944,22 @@ function lfNext(){
   stepHistory.push(currentStep);currentStep=vs[idx+1];renderStep(currentStep);
 }
 
-function rDias(c){c.innerHTML='<div class="q-title">Quantos dias você trabalha por semana?</div><div class="chip-grid">'+[1,2,3,4,5,6,7].map(n=>'<button class="chip num'+(D.diasSemana===n?' sel':'')+'" onclick="D.diasSemana='+n+';renderStep(\'dias\')">'+n+'</button>').join('')+'</div>';}
-function rHoras(c){c.innerHTML='<div class="q-title">Quantas horas você dirige por dia?</div><div class="inp-row"><input type="number" placeholder="8" value="'+(D.horasDia||'')+'" oninput="D.horasDia=this.value;refreshNext()"><span class="inp-unit">horas</span></div><div class="q-hint">Considere apenas o tempo rodando. Desconte pausas.</div>';}
-function rKm(c){c.innerHTML='<div class="q-title">Quantos km você dirige por dia?</div><div class="inp-row"><input type="number" placeholder="150" value="'+(D.kmDia||'')+'" oninput="D.kmDia=this.value;refreshNext()"><span class="inp-unit">Km</span></div>';}
-function rMeta(c){c.innerHTML='<div class="q-title">Qual é a sua meta semanal?</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="1.500,00" value="'+(D.metaSemanal||'')+'" oninput="D.metaSemanal=this.value;refreshNext()"></div>';}
-function rVeiculo(c){c.innerHTML='<div class="q-title">Que tipo de veículo você dirige?</div><div class="chip-grid">'+[{v:'carro',i:'🚗',l:'Carro'},{v:'moto',i:'🛵',l:'Moto'},{v:'bicicleta',i:'🚲',l:'Bicicleta'}].map(x=>'<button class="chip w2'+(D.veiculo===x.v?' sel':'')+'" onclick="D.veiculo=\''+x.v+'\';D.categorias=[];D.combustivel=null;renderStep(\'veiculo\')"><div class="chip-icon">'+x.i+'</div>'+x.l+'</button>').join('')+'</div>';}
-function rCateg(c){let cats=D.veiculo==='carro'?['Uber X','Comfort','Black','99 pop','99 Plus','inDrive','Táxi','Entregas']:D.veiculo==='moto'?['Passageiro','Entregas']:['Entregas'];c.innerHTML='<div class="q-title">Quais categorias você trabalha?</div><div class="chip-grid">'+cats.map(ct=>'<button class="chip'+(D.categorias.includes(ct)?' sel':'')+'" onclick="togCat(\''+ct+'\')">'+ct+'</button>').join('')+'</div>';}
+function rDias(c){c.innerHTML='<div class="q-title">'+t('q_dias')+'</div><div class="chip-grid">'+[1,2,3,4,5,6,7].map(n=>'<button class="chip num'+(D.diasSemana===n?' sel':'')+'" onclick="D.diasSemana='+n+';renderStep(\'dias\')">'+n+'</button>').join('')+'</div>';}
+function rHoras(c){c.innerHTML='<div class="q-title">'+t('q_horas')+'</div><div class="inp-row"><input type="number" placeholder="8" value="'+(D.horasDia||'')+'" oninput="D.horasDia=this.value;refreshNext()"><span class="inp-unit">'+t('horas')+'</span></div><div class="q-hint">'+t('q_horas_hint')+'</div>';}
+function rKm(c){c.innerHTML='<div class="q-title">'+t('q_km')+'</div><div class="inp-row"><input type="number" placeholder="150" value="'+(D.kmDia||'')+'" oninput="D.kmDia=this.value;refreshNext()"><span class="inp-unit">Km</span></div>';}
+function rMeta(c){c.innerHTML='<div class="q-title">'+t('q_meta')+'</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="1.500,00" value="'+(D.metaSemanal||'')+'" oninput="D.metaSemanal=this.value;refreshNext()"></div>';}
+function rVeiculo(c){c.innerHTML='<div class="q-title">'+t('q_veiculo')+'</div><div class="chip-grid">'+[{v:'carro',i:'🚗',l:t('v_carro')},{v:'moto',i:'🛵',l:t('v_moto')},{v:'bicicleta',i:'🚲',l:t('v_bicicleta')}].map(x=>'<button class="chip w2'+(D.veiculo===x.v?' sel':'')+'" onclick="D.veiculo=\''+x.v+'\';D.categorias=[];D.combustivel=null;renderStep(\'veiculo\')"><div class="chip-icon">'+x.i+'</div>'+x.l+'</button>').join('')+'</div>';}
+function rCateg(c){let cats=D.veiculo==='carro'?['Uber X','Comfort','Black','99 pop','99 Plus','inDrive','Táxi','Entregas']:D.veiculo==='moto'?['Passageiro','Entregas']:['Entregas'];c.innerHTML='<div class="q-title">'+t('q_categ')+'</div><div class="chip-grid">'+cats.map(ct=>'<button class="chip'+(D.categorias.includes(ct)?' sel':'')+'" onclick="togCat(\''+ct+'\')">'+ct+'</button>').join('')+'</div>';}
 function togCat(ct){if(D.categorias.includes(ct))D.categorias=D.categorias.filter(x=>x!==ct);else D.categorias.push(ct);renderStep('categ');}
-function rStatus(c){let opts=D.veiculo==='bicicleta'?[{v:'proprio',i:'🏠',l:'Próprio'},{v:'alugado',i:'📄',l:'Alugado'}]:[{v:'financiado',i:'💳',l:'Financiado'},{v:'proprio',i:'🏠',l:'Próprio'},{v:'alugado',i:'📄',l:'Alugado'},{v:'aluguel_privado',i:'🤝',l:'Aluguel Privado'}];c.innerHTML='<div class="q-title">Qual é o status do seu veículo?</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">'+opts.map(o=>'<button class="chip'+(D.status===o.v?' sel':'')+'" style="padding:18px 10px;" onclick="D.status=\''+o.v+'\';renderStep(\'status\')"><div class="chip-icon">'+o.i+'</div>'+o.l+'</button>').join('')+'</div>';}
-function rFinanc(c){const isAl=D.status==='alugado'||D.status==='aluguel_privado';c.innerHTML='<div class="q-title">'+(isAl?'Quanto você paga pelo aluguel do veículo por mês?':'Quanto você paga pelo financiamento de veículo por mês?')+'</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="800,00" value="'+(D.financiamento||'')+'" oninput="D.financiamento=this.value;refreshNext()"></div>';}
-function rManut(c){c.innerHTML='<div class="q-title">Quanto você gasta por mês com manutenção de veículo?</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="500,00" value="'+(D.manutencao||'')+'" oninput="D.manutencao=this.value;refreshNext()"></div>';}
-function rSeguro(c){c.innerHTML='<div class="q-title">Quanto custa seu seguro veicular mensal?</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="150,00" value="'+(D.seguro||'')+'" oninput="D.seguro=this.value;refreshNext()"></div>';}
-function rOutros(c){c.innerHTML='<div class="q-title">Você tem outros custos mensais que deseja adicionar?</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="0,00" value="'+(D.outrosCustos||'')+'" oninput="D.outrosCustos=this.value||\'0\';refreshNext()"><span class="inp-unit">/mês</span></div><div class="q-hint">Ex: lava-jato, alimentação, pedágios, etc.</div>';}
-function rIpva(c){c.innerHTML='<div class="q-title">Quanto você paga por ano de IPVA, Licenciamento e DPVAT?</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="1.200,00" value="'+(D.ipva||'')+'" oninput="D.ipva=this.value;refreshNext()"><span class="inp-unit">/ano</span></div>';}
-function rComb(c){let opts=D.veiculo==='carro'?[{v:'gasolina',i:'⛽',l:'Gasolina'},{v:'etanol',i:'💧',l:'Etanol'},{v:'gnv',i:'🔥',l:'GNV'},{v:'eletrico',i:'⚡',l:'Elétrico'}]:D.veiculo==='moto'?[{v:'gasolina',i:'⛽',l:'Gasolina'},{v:'etanol',i:'💧',l:'Etanol'},{v:'eletrico',i:'⚡',l:'Elétrico'}]:[{v:'eletrico',i:'⚡',l:'Elétrico'},{v:'nenhum',i:'🚫',l:'Nenhum'}];c.innerHTML='<div class="q-title">Que tipo de combustível seu veículo usa?</div><div class="chip-grid">'+opts.map(o=>'<button class="chip'+(D.combustivel===o.v?' sel':'')+'" onclick="D.combustivel=\''+o.v+'\';renderStep(\'comb\')"><div class="chip-icon">'+o.i+'</div>'+o.l+'</button>').join('')+'</div>';}
-function rAuto(c){const isEl=D.combustivel==='eletrico';const u=D.combustivel==='gnv'?'km/m³':isEl?'km':'km/L';const q=isEl?'Quantos Km você roda com a bateria cheia?':'Qual a autonomia de combustível do seu veículo?';c.innerHTML='<div class="q-title">'+q+'</div><div class="inp-row"><input type="number" placeholder="12" value="'+(D.autonomia||'')+'" oninput="D.autonomia=this.value;refreshNext()"><span class="inp-unit">'+u+'</span></div>';}
-function rPreco(c){const q=D.combustivel==='gnv'?'Qual é o preço médio que você paga por m³ de GNV?':D.combustivel==='eletrico'?'Quanto você paga por kWh?':'Qual é o preço por litro de combustível que você paga em média?';const u=D.combustivel==='gnv'?'/m³':D.combustivel==='eletrico'?'/kWh':'/L';c.innerHTML='<div class="q-title">'+q+'</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="5,50" step="0.01" value="'+(D.precoCombustivel||'')+'" oninput="D.precoCombustivel=this.value;refreshNext()"><span class="inp-unit">'+u+'</span></div>';}
+function rStatus(c){let opts=D.veiculo==='bicicleta'?[{v:'proprio',i:'🏠',l:t('s_proprio')},{v:'alugado',i:'📄',l:t('s_alugado')}]:[{v:'financiado',i:'💳',l:t('s_financiado')},{v:'proprio',i:'🏠',l:t('s_proprio')},{v:'alugado',i:'📄',l:t('s_alugado')},{v:'aluguel_privado',i:'🤝',l:t('s_aluguel_privado')}];c.innerHTML='<div class="q-title">'+t('q_status')+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">'+opts.map(o=>'<button class="chip'+(D.status===o.v?' sel':'')+'" style="padding:18px 10px;" onclick="D.status=\''+o.v+'\';renderStep(\'status\')"><div class="chip-icon">'+o.i+'</div>'+o.l+'</button>').join('')+'</div>';}
+function rFinanc(c){const isAl=D.status==='alugado'||D.status==='aluguel_privado';c.innerHTML='<div class="q-title">'+(isAl?t('q_financ_aluguel'):t('q_financ'))+'</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="800,00" value="'+(D.financiamento||'')+'" oninput="D.financiamento=this.value;refreshNext()"></div>';}
+function rManut(c){c.innerHTML='<div class="q-title">'+t('q_manut')+'</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="500,00" value="'+(D.manutencao||'')+'" oninput="D.manutencao=this.value;refreshNext()"></div>';}
+function rSeguro(c){c.innerHTML='<div class="q-title">'+t('q_seguro')+'</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="150,00" value="'+(D.seguro||'')+'" oninput="D.seguro=this.value;refreshNext()"></div>';}
+function rOutros(c){c.innerHTML='<div class="q-title">'+t('q_outros')+'</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="0,00" value="'+(D.outrosCustos||'')+'" oninput="D.outrosCustos=this.value||\'0\';refreshNext()"><span class="inp-unit">'+t('por_mes')+'</span></div><div class="q-hint">'+t('q_outros_hint')+'</div>';}
+function rIpva(c){c.innerHTML='<div class="q-title">'+t('q_ipva')+'</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="1.200,00" value="'+(D.ipva||'')+'" oninput="D.ipva=this.value;refreshNext()"><span class="inp-unit">/ano</span></div>';}
+function rComb(c){let opts=D.veiculo==='carro'?[{v:'gasolina',i:'⛽',l:t('c_gasolina')},{v:'etanol',i:'💧',l:t('c_etanol')},{v:'gnv',i:'🔥',l:t('c_gnv')},{v:'eletrico',i:'⚡',l:t('c_eletrico')}]:D.veiculo==='moto'?[{v:'gasolina',i:'⛽',l:t('c_gasolina')},{v:'etanol',i:'💧',l:t('c_etanol')},{v:'eletrico',i:'⚡',l:t('c_eletrico')}]:[{v:'eletrico',i:'⚡',l:t('c_eletrico')},{v:'nenhum',i:'🚫',l:t('c_nenhum')}];c.innerHTML='<div class="q-title">'+t('q_comb')+'</div><div class="chip-grid">'+opts.map(o=>'<button class="chip'+(D.combustivel===o.v?' sel':'')+'" onclick="D.combustivel=\''+o.v+'\';renderStep(\'comb\')"><div class="chip-icon">'+o.i+'</div>'+o.l+'</button>').join('')+'</div>';}
+function rAuto(c){const isEl=D.combustivel==='eletrico';const u=D.combustivel==='gnv'?'km/m³':isEl?'km':'km/L';const q=isEl?t('q_auto_eletrico'):t('q_auto');c.innerHTML='<div class="q-title">'+q+'</div><div class="inp-row"><input type="number" placeholder="12" value="'+(D.autonomia||'')+'" oninput="D.autonomia=this.value;refreshNext()"><span class="inp-unit">'+u+'</span></div>';}
+function rPreco(c){const q=D.combustivel==='gnv'?t('q_preco_gnv'):D.combustivel==='eletrico'?t('q_preco_eletrico'):t('q_preco');const u=D.combustivel==='gnv'?'/m³':D.combustivel==='eletrico'?'/kWh':'/L';c.innerHTML='<div class="q-title">'+q+'</div><div class="inp-row"><span class="inp-pfx">R$</span><input type="number" placeholder="5,50" step="0.01" value="'+(D.precoCombustivel||'')+'" oninput="D.precoCombustivel=this.value;refreshNext()"><span class="inp-unit">'+u+'</span></div>';}
 
 // ── CÁLCULO ──────────────────────────────────────────────
 let calcData={};
@@ -1016,8 +1016,8 @@ function getPF(){
 
 function getPLabels(){
   return{
-    title:currentPeriod==='dia'?'Lucro Diário':currentPeriod==='semana'?'Lucro Semanal':'Lucro Mensal',
-    costs:currentPeriod==='dia'?'Custos Diários':currentPeriod==='semana'?'Custos Semanais':'Custos Mensais'
+    title:currentPeriod==='dia'?t('lucro_diario'):currentPeriod==='semana'?t('lucro_semanal'):t('lucro_mensal_r'),
+    costs:currentPeriod==='dia'?t('custos_diarios'):currentPeriod==='semana'?t('custos_semanais'):t('custos_mensais')
   };
 }
 
@@ -1063,12 +1063,12 @@ function buildCostsBreakdown(){
   const R=calcData;const pf=getPF();const labs=getPLabels();
   document.getElementById('costs-title').textContent=labs.costs;
   const items=[
-    {icon:'⛽',name:'Combustível',val:R.custoCombMes},
-    {icon:'🏛',name:'Financiamento',val:R.financMes},
-    {icon:'🔧',name:'Manutenção',val:R.manutMes},
-    {icon:'🛡',name:'Seguro Veicular',val:R.segMes},
-    {icon:'📄',name:'Taxas Anuais',val:R.ipvaMes},
-    {icon:'···',name:'Outros Custos',val:R.outrosMes}
+    {icon:'⛽',name:t('custo_combustivel'),val:R.custoCombMes},
+    {icon:'🏛',name:t('custo_financiamento'),val:R.financMes},
+    {icon:'🔧',name:t('custo_manutencao'),val:R.manutMes},
+    {icon:'🛡',name:t('custo_seguro'),val:R.segMes},
+    {icon:'📄',name:t('custo_taxas'),val:R.ipvaMes},
+    {icon:'···',name:t('custo_outros'),val:R.outrosMes}
   ].filter(x=>x.val>0).map(x=>({...x,val:x.val*pf}));
   const total=items.reduce((s,x)=>s+x.val,0);
   document.getElementById('costs-total').textContent=fmtR(total);
@@ -1203,7 +1203,7 @@ function ecRenderDias(){
 
 function ecRenderVeic(){
   const g=document.getElementById('ec-veic-grid');if(!g)return;
-  g.innerHTML=[{v:'carro',i:'🚗',l:'Carro'},{v:'moto',i:'🛵',l:'Moto'},{v:'bicicleta',i:'🚲',l:'Bicicleta'}].map(x=>
+  g.innerHTML=[{v:'carro',i:'🚗',l:t('v_carro')},{v:'moto',i:'🛵',l:t('v_moto')},{v:'bicicleta',i:'🚲',l:t('v_bicicleta')}].map(x=>
     '<button class="veic-chip-ec'+(D.veiculo===x.v?' sel':'')+'" onclick="D.veiculo=\''+x.v+'\';D.categorias=[];D.combustivel=null;ecRenderAll()"><span class="vi">'+x.i+'</span><span class="vl">'+x.l+'</span></button>'
   ).join('');
 }
@@ -1211,8 +1211,8 @@ function ecRenderVeic(){
 function ecRenderStatus(){
   const g=document.getElementById('ec-status-grid');if(!g)return;
   const opts=D.veiculo==='bicicleta'?
-    [{v:'proprio',i:'🏠',l:'Próprio'},{v:'alugado',i:'📄',l:'Alugado'}]:
-    [{v:'financiado',i:'💳',l:'Financiado'},{v:'proprio',i:'🏠',l:'Próprio'},{v:'alugado',i:'📄',l:'Alugado'},{v:'aluguel_privado',i:'🤝',l:'Aluguel Privado'}];
+    [{v:'proprio',i:'🏠',l:t('s_proprio')},{v:'alugado',i:'📄',l:t('s_alugado')}]:
+    [{v:'financiado',i:'💳',l:t('s_financiado')},{v:'proprio',i:'🏠',l:t('s_proprio')},{v:'alugado',i:'📄',l:t('s_alugado')},{v:'aluguel_privado',i:'🤝',l:t('s_aluguel_privado')}];
   g.innerHTML=opts.map(o=>
     '<button class="status-chip-ec'+(D.status===o.v?' sel':'')+'" onclick="D.status=\''+o.v+'\';ecRenderStatus();ecRenderCustos();ecRecalc()"><span class="si">'+o.i+'</span><span class="sl">'+o.l+'</span></button>'
   ).join('');
@@ -1257,9 +1257,9 @@ function ecRenderCustos(){
 }
 
 const COMB_OPTS_EC={
-  carro:[{v:'gasolina',i:'⛽',l:'Gasolina'},{v:'etanol',i:'💧',l:'Etanol'},{v:'gnv',i:'🔥',l:'GNV'},{v:'eletrico',i:'⚡',l:'Elétrico'}],
-  moto:[{v:'gasolina',i:'⛽',l:'Gasolina'},{v:'etanol',i:'💧',l:'Etanol'},{v:'eletrico',i:'⚡',l:'Elétrico'}],
-  bicicleta:[{v:'eletrico',i:'⚡',l:'Elétrico'},{v:'nenhum',i:'🚫',l:'Nenhum'}]
+  carro:[{v:'gasolina',i:'⛽',l:t('c_gasolina')},{v:'etanol',i:'💧',l:t('c_etanol')},{v:'gnv',i:'🔥',l:t('c_gnv')},{v:'eletrico',i:'⚡',l:t('c_eletrico')}],
+  moto:[{v:'gasolina',i:'⛽',l:t('c_gasolina')},{v:'etanol',i:'💧',l:t('c_etanol')},{v:'eletrico',i:'⚡',l:t('c_eletrico')}],
+  bicicleta:[{v:'eletrico',i:'⚡',l:t('c_eletrico')},{v:'nenhum',i:'🚫',l:t('c_nenhum')}]
 };
 
 function ecRenderComb(){
@@ -1339,7 +1339,7 @@ function ecSave(){
 }
 
 // ── APP ORIGINAL ──────────────────────────────────────────
-let isDark=false,currentLang='pt',currentPos='Centro',currentTheme='Escuro';
+var isDark=false,currentLang='pt',currentPos='Centro',currentTheme='Escuro';
 let userName='Luiz Gustavo Neves',userPhotoUrl=null;
 
 const IND_KEYS=['$/Km','Lucro','Lucro %','Lucro /Hora','$/Hora','$/Min','Nota'];
@@ -1350,6 +1350,7 @@ function indLabel(key){
 
 function setLang(lang){
   currentLang=lang;
+  // Atualizar visual do seletor
   ['pt','en','es'].forEach(l=>{
     document.getElementById('lang-'+l).classList.toggle('sel',l===lang);
     const lc=document.getElementById('lc-'+l);
@@ -1357,6 +1358,47 @@ function setLang(lang){
     lc.textContent=l===lang?'✓':'';
   });
   document.getElementById('lang-current-label').textContent={pt:'PT',en:'EN',es:'ES'}[lang];
+  // Aplicar traduções em todos os elementos com data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key=el.getAttribute('data-i18n');
+    var translated=t(key);
+    if(translated) el.textContent=translated;
+  });
+  // Re-renderizar telas dinâmicas
+  if(typeof renderIndicators==='function') renderIndicators();
+  if(typeof _histRender==='function') _histRender();
+  if(typeof renderStep==='function' && typeof currentStep!=='undefined') renderStep(currentStep);
+  if(typeof renderResult==='function' && typeof calcData!=='undefined' && calcData && calcData.brutoMes) {
+    renderResult(1+(parseFloat((document.getElementById('sim-slider')||{value:'0'}).value)||0)/100);
+    if(typeof buildCostsBreakdown==='function') buildCostsBreakdown();
+  }
+  // Tema label depende do estado isDark
+  var temaLbl=document.getElementById('tema-label');
+  if(temaLbl) temaLbl.textContent=isDark?t('tema_escuro'):t('tema_claro');
+  // Telas com títulos dinâmicos
+  var screens={
+    '#v-ganho .help-btn':'visualizar_btn',
+    '#lf-intro .lf-title':'calc_lucro_titulo',
+    '#lf-wizard .lf-title':'calc_lucro_titulo',
+    '#lf-loading .lf-title':'calc_lucro_titulo',
+    '#lf-result .res-hdr-title':'detalhes',
+    '#lf-edit-calc .ec-title':'editar_calculo',
+  };
+  Object.keys(screens).forEach(function(sel){
+    var el=document.querySelector(sel);
+    if(el) el.textContent=t(screens[sel]);
+  });
+  // FAB menu
+  var fabLabels=document.querySelectorAll('.fab-lbl');
+  if(fabLabels[0]) fabLabels[0].textContent=t('camera_fab');
+  if(fabLabels[1]) fabLabels[1].textContent=t('ganhos_fab');
+  var fabLinks=document.querySelectorAll('.fab-link-lbl');
+  if(fabLinks[0]) fabLinks[0].textContent=t('minhas_gravacoes');
+  if(fabLinks[1]) fabLinks[1].textContent=t('historico_corridas_fab');
+  // Tab bar
+  var tabs=document.querySelectorAll('.tab-item span:last-child');
+  if(tabs[0]) tabs[0].textContent=''; // ícone tab copiloto
+  showToast({pt:'🇧🇷 Português',en:'🇺🇸 English',es:'🇪🇸 Español'}[lang]);
 }
 
 function applyAppTheme(){
@@ -2304,26 +2346,26 @@ function _histRender() {
 
   // Atualizar contador
   if (contador) {
-    contador.textContent = total + '/' + histCorridas.length + ' registros';
+    contador.textContent = total + '/' + histCorridas.length + ' ' + t('registros');
   }
 
   // Atualizar label dos filtros
   var lbData = document.getElementById('hist-filter-data-lbl');
   var lbApp  = document.getElementById('hist-filter-app-lbl');
   if (lbData) {
-    lbData.textContent = histFiltroPeriodo === 'hoje' ? 'Hoje' :
-                         histFiltroPeriodo === 'semana' ? 'Semana' :
-                         histFiltroPeriodo === 'mes' ? 'Mês' : 'Tudo';
+    lbData.textContent = histFiltroPeriodo === 'hoje' ? t('hoje') :
+                         histFiltroPeriodo === 'semana' ? t('semana') :
+                         histFiltroPeriodo === 'mes' ? t('mes') : t('tudo');
   }
   if (lbApp) {
-    lbApp.textContent = histFiltroApp === 'todos' ? 'Todos Apps' : histFiltroApp;
+    lbApp.textContent = histFiltroApp === 'todos' ? t('todos_apps') : histFiltroApp;
   }
 
   if (total === 0) {
     lista.innerHTML = '<div style="text-align:center;padding:40px 20px;color:#8A9099;">'
       + '<div style="font-size:32px;margin-bottom:12px;">🕐</div>'
-      + '<div style="font-size:15px;font-weight:700;color:#1C1C1C;margin-bottom:6px;">Nenhuma corrida neste período</div>'
-      + '<div style="font-size:13px;">Tente outro filtro de data ou app.</div>'
+      + '<div style="font-size:15px;font-weight:700;color:#1C1C1C;margin-bottom:6px;">' + t('nenhuma_corrida_periodo') + '</div>'
+      + '<div style="font-size:13px;">' + t('filtro_dica') + '</div>'
       + '</div>';
     return;
   }
@@ -2451,7 +2493,7 @@ function histClearConfirm() {
     + '<div style="font-size:16px;font-weight:800;color:#1C1C1C;margin-bottom:8px;">Limpar histórico?</div>'
     + '<div style="font-size:13px;color:#8A9099;margin-bottom:16px;">Esta ação não pode ser desfeita.</div>'
     + '<div style="display:flex;gap:10px;">'
-    + '<button onclick="_histRender()" style="flex:1;border:1.5px solid #DDD;border-radius:12px;padding:14px;font-size:14px;font-weight:700;background:white;cursor:pointer;color:#666;">Cancelar</button>'
+    + '<button onclick="_histRender()" style="flex:1;border:1.5px solid #DDD;border-radius:12px;padding:14px;font-size:14px;font-weight:700;background:white;cursor:pointer;color:#666;"><span data-i18n="cancelar">Cancelar</span></button>'
     + '<button onclick="histClear()" style="flex:1;border:none;border-radius:12px;padding:14px;font-size:14px;font-weight:700;background:#EF4444;color:white;cursor:pointer;">Limpar</button>'
     + '</div>'
     + '</div>';
@@ -2475,6 +2517,663 @@ function histFilterApp() {
   var idx = apps.indexOf(histFiltroApp);
   histFiltroApp = apps[(idx + 1) % apps.length];
   _histRender();
+}
+
+
+
+
+
+
+
+// ══════════════════════════════════════════════════════════
+// TRADUÇÕES COMPLETAS DO APP — PT / EN / ES
+// "Cálculo de Ganhos" em EN = "Cherry Picker" (regra especial)
+// ══════════════════════════════════════════════════════════
+
+var i18n = {
+  pt: {
+    // Geral
+    'ajuda': '? CENTRAL DE AJUDA',
+    'assinatura_ativa': 'Assinatura Ativa',
+    'encerra_em': 'Encerra em: sex, 6 de jan de 2226',
+    'salvar': 'Salvar',
+    'cancelar': 'Cancelar',
+    'confirmar': 'Confirmar',
+    'voltar': '‹ Voltar',
+    'proximo': 'Próximo ›',
+    // Home
+    'copiloto': 'Copiloto',
+    'copiloto_sub': 'Botão flutuante ativo',
+    'calculo_ganhos': 'Cálculo de Ganhos',
+    'camera_secreta': 'Câmera Secreta',
+    'video_tutorial': '▶  Vídeo Tutorial',
+    'btn_demo': 'Demo',
+    // Perfil
+    'convide_amigos': 'Convide seus amigos',
+    'copiar_codigo': 'Toque para copiar seu código',
+    'configuracoes': 'Configurações',
+    'grupo_facebook': 'Grupo de Facebook do GigU',
+    'sorteio_semanal': 'Sorteio Semanal',
+    'gigu_conta': 'GigU Conta',
+    'gigu_conta_sub': 'Assistente financeiro via WhatsApp',
+    // Sorteio
+    'sorteio_titulo': 'Sorteio Semanal',
+    'sorteio_para_assinantes': 'Sorteio Semanal para Assinantes',
+    // Configs
+    'aparencia_config': 'Aparência',
+    'aparencia_config_sub': 'Personalize a aparência do aplicativo',
+    'tema_claro': 'Tema Claro',
+    'tema_escuro': 'Tema Escuro',
+    'tema_label_sub': 'Alternar o tema entre claro e escuro',
+    'idioma': 'Idioma',
+    'idioma_sub': 'Defina o idioma do aplicativo',
+    'seguranca': 'Segurança',
+    'seguranca_sub': 'Gerencie suas configurações de segurança',
+    'desbloqueio': 'Desbloqueio do aplicativo',
+    'desbloqueio_sub': 'Use o método de desbloqueio do seu dispositivo',
+    'senha': 'Senha',
+    'sessoes': 'Sessões Ativas',
+    'conta': 'Conta',
+    'conta_sub': 'Gerencie sua conta',
+    'editar_perfil': 'Editar Perfil',
+    'diagnostico': 'Diagnóstico do Dispositivo',
+    'sair': 'Sair',
+    'sobre': 'Sobre',
+    'termos': 'Termos e Condições',
+    // Editar Perfil
+    'alterar_foto': '📷 Alterar foto',
+    'nome_completo': 'Nome completo',
+    // Copiloto
+    'ajustes_copiloto': 'Ajustes do Copiloto',
+    'botao_flutuante': 'Botão Flutuante',
+    'botao_flutuante_sub': 'Ajuste o tamanho e a transparência do botão flutuante',
+    'tamanho': 'Tamanho',
+    'tamanho_sub': 'Escolha entre pequeno, médio ou grande',
+    'opacidade': 'Opacidade',
+    'previa': 'Pré-visualização',
+    // Ganhos
+    'tela_ganhos': 'Cálculo de Ganhos',
+    'visualizar_btn': '👁️ VISUALIZAR',
+    'historico_corridas': 'Histórico de Corridas',
+    'historico_sub': 'Registro das corridas recebidas',
+    'aplicativos': 'Aplicativos',
+    'aplicativos_sub': 'Escolha os apps',
+    'semaforo': 'Semáforo de Valores',
+    'vermelho_label': '● Vermelho para corridas ruins',
+    'amarelo_label': '● Amarelo para corridas intermediárias',
+    'verde_label': '● Verde para corridas boas',
+    'ganho_km': 'Ganho por Km',
+    'ganho_hora': 'Ganho por Hora',
+    'nota_passageiro': 'Nota do passageiro',
+    'ajuda_label': '❓ AJUDA',
+    'ruim': 'Ruim',
+    'bom': 'Bom',
+    'lucro_liquido': 'Lucro Líquido',
+    'lucro_liquido_sub': 'Calcule seu custo por km para ver seu lucro em cada corrida e calibrar seu semáforo',
+    'calcule_lucro_btn': 'Calcule meu lucro e custo por Km',
+    'btn_editar': '✏️ Editar',
+    'btn_detalhes': '📊 Detalhes',
+    'custo_por_km': '🛣️ Custo por Km',
+    'aparencia': 'Aparência',
+    'aparencia_sub': 'Personalize o cartão e arraste para reordenar',
+    'selecionados': 'Selecionados (máx. 4)',
+    'disponiveis': 'Disponíveis',
+    'posicao_cartao': 'Posição do Cartão',
+    'tema_cartao': 'Tema do Cartão',
+    'modo_daltonico': 'Modo Daltônico',
+    'opacidade_cartao': '👁️ Opacidade do Cartão',
+    'tamanho_fonte': 'Tt Tamanho da fonte',
+    'duracao_cartao': '🕐 Duração do cartão',
+    'avancado': 'Avançado',
+    'avancado_sub': 'Defina automações avançadas em ofertas de corrida',
+    'notif_texto': 'Notificação de texto',
+    'notif_texto_sub': 'Detalhes da corrida com links rápidos',
+    'notif_voz': 'Notificação de voz',
+    'notif_voz_sub': 'Ouça os detalhes da corrida',
+    'captura_auto': 'Captura de Tela Automática',
+    'captura_auto_sub': 'Salva captura de tela de cada oferta',
+    'msg_passageiro': 'Mensagem para o passageiro',
+    'msg_passageiro_sub': 'Mensagem padrão copiada automaticamente',
+    // Câmera
+    'camera_titulo': 'Câmera Secreta',
+    'gravacoes': 'Gravações',
+    'gravacoes_sub': 'Ver e gerenciar suas gravações',
+    'lente': 'Lente',
+    'lente_sub': 'Defina a lente padrão',
+    'qualidade': 'Qualidade de gravação',
+    'qualidade_sub': 'Selecione a qualidade do vídeo',
+    'cortes': 'Cortes de gravação',
+    'cortes_sub': 'Divida a gravação em vídeos menores',
+    'tempo_limite': 'Tempo limite de gravação',
+    'tempo_limite_sub': 'Defina um limite de tempo',
+    'armazenamento': 'Armazenamento',
+    'armazenamento_sub': 'Escolha onde salvar gravações',
+    // Lucro flow
+    'calc_lucro_titulo': 'Calcular Lucro e Custo por Km',
+    'vamos_comecar': 'Vamos começar',
+    'calculando': 'Calculando os números...',
+    'detalhes': 'Detalhes',
+    'custo_km_label': 'Custo por Km',
+    'custo_hr_label': 'Custo por Hora',
+    'simule_ganhos': 'Simule Ganhos Maiores ❓',
+    'aplicar_semaforo': 'Aplicar $/Km e $/Hr no Semáforo',
+    // Editar Cálculo
+    'editar_calculo': 'Editar Cálculo',
+    'resetar': '↺ RESETAR',
+    'info_trabalho': 'Informações de Trabalho',
+    'dias_semana': 'Dias trabalhados por semana',
+    'horas_dia': 'Horas dirigidas /dia',
+    'km_dia': 'Km rodados /dia',
+    'meta_semanal': 'Meta semanal',
+    'info_veiculo': 'Informações do Veículo',
+    'tipo_veiculo': 'Tipo de Veículo',
+    'situacao_veiculo': 'Situação do Veículo',
+    'categorias': 'Categorias',
+    'custos': 'Custos',
+    'combustivel': 'Combustível',
+    'tipo_combustivel': 'Tipo de Combustível',
+    // Demo
+    'demo_titulo': 'Demo',
+    'demo_hint': 'Toque em uma corrida para ver a análise GigU',
+    // Historico
+    'historico_titulo': 'Histórico de Corridas',
+    'todos_apps': 'Todos Apps',
+    'hoje': 'Hoje',
+    'tudo': 'Tudo',
+    // FAB menu
+    'camera_fab': 'Câmera',
+    'ganhos_fab': 'Ganhos',
+    'minhas_gravacoes': 'Minhas Gravações',
+    'historico_corridas_fab': 'Histórico Corridas',
+    // Visualizar
+    'entenda_indicadores': 'Entenda os Indicadores',
+    'distancias_info': 'Distâncias e tempos incluem o deslocamento.',
+    'confirme_valores': 'Confirme os valores sugeridos',
+
+    // Histórico
+    'semana': 'Semana',
+    'mes': 'Mês',
+    'registros': 'registros',
+    'nenhuma_corrida_periodo': 'Nenhuma corrida neste período',
+    'filtro_dica': 'Tente outro filtro de data ou app.',
+    // Lucro Líquido - intro
+    'lucro_mensal_label': 'Lucro Mensal',
+    'vamos_comecar': 'Vamos começar',
+    'leva_menos': 'Leva menos de 5 minutinhos',
+    'analise_custos': 'Analise seus custos e descubra quanto você realmente está lucrando!',
+    'bullet1': 'Veja detalhes do lucro de cada corrida no cartão e no histórico de corridas',
+    'bullet2': 'Aplique facilmente os valores /km e /hr sugeridos ao Semáforo de Valores',
+    'bullet3': 'Simule ganhos maiores para testar metas mais ousadas',
+    // Wizard steps
+    'q_dias': 'Quantos dias você trabalha por semana?',
+    'q_horas': 'Quantas horas você dirige por dia?',
+    'q_horas_hint': 'Considere apenas o tempo rodando. Desconte pausas como almoço, abastecimento ou espera.',
+    'q_km': 'Quantos km você dirige por dia?',
+    'q_meta': 'Qual é a sua meta semanal?',
+    'q_veiculo': 'Que tipo de veículo você dirige?',
+    'v_carro': 'Carro', 'v_moto': 'Moto', 'v_bicicleta': 'Bicicleta',
+    'q_categ': 'Quais categorias você trabalha?',
+    'q_status': 'Qual é o status do seu veículo?',
+    's_financiado': 'Financiado', 's_proprio': 'Próprio', 's_alugado': 'Alugado', 's_aluguel_privado': 'Aluguel Privado',
+    'q_financ_aluguel': 'Quanto você paga pelo aluguel do veículo por mês?',
+    'q_financ': 'Quanto você paga pelo financiamento de veículo por mês?',
+    'q_manut': 'Quanto você gasta por mês com manutenção de veículo?',
+    'q_seguro': 'Quanto custa seu seguro veicular mensal?',
+    'q_outros': 'Você tem outros custos mensais que deseja adicionar?',
+    'q_outros_hint': 'Ex: lava-jato, alimentação, pedágios, etc.',
+    'q_ipva': 'Quanto você paga por ano de IPVA, Licenciamento e DPVAT?',
+    'q_comb': 'Que tipo de combustível seu veículo usa?',
+    'c_gasolina': 'Gasolina', 'c_etanol': 'Etanol', 'c_gnv': 'GNV', 'c_eletrico': 'Elétrico', 'c_nenhum': 'Nenhum',
+    'q_auto_eletrico': 'Quantos Km você roda com a bateria cheia?',
+    'q_auto': 'Qual a autonomia de combustível do seu veículo?',
+    'q_preco_gnv': 'Qual é o preço médio que você paga por m³ de GNV?',
+    'q_preco_eletrico': 'Quanto você paga por kWh?',
+    'q_preco': 'Qual é o preço por litro de combustível que você paga em média?',
+    'calcular': 'Calcular ›',
+    'proximo': 'Próximo ›',
+    'voltar': '‹ Voltar',
+    'horas': 'horas',
+    'por_mes': '/mês',
+  
+    'lucro_diario': 'Lucro Diário',
+    'lucro_semanal': 'Lucro Semanal',
+    'lucro_mensal_r': 'Lucro Mensal',
+    'custos_diarios': 'Custos Diários',
+    'custos_semanais': 'Custos Semanais',
+    'custos_mensais': 'Custos Mensais',
+    'custo_km': 'Custo por Km',
+    'custo_hora': 'Custo por Hora',
+    'custo_combustivel': 'Combustível',
+    'custo_financiamento': 'Financiamento',
+    'custo_manutencao': 'Manutenção',
+    'custo_seguro': 'Seguro Veicular',
+    'custo_taxas': 'Taxas Anuais',
+    'custo_outros': 'Outros Custos',
+    'periodo_dia': 'DIA',
+    'periodo_semana': 'SEMANA',
+    'periodo_mes': 'MÊS',
+  },
+
+  en: {
+    'ajuda': '? HELP CENTER',
+    'assinatura_ativa': 'Active Subscription',
+    'encerra_em': 'Expires: Fri, Jan 6, 2226',
+    'salvar': 'Save',
+    'cancelar': 'Cancel',
+    'confirmar': 'Confirm',
+    'voltar': '‹ Back',
+    'proximo': 'Next ›',
+    'copiloto': 'Copilot',
+    'copiloto_sub': 'Floating button active',
+    'calculo_ganhos': 'Cherry Picker',   // <<< REGRA ESPECIAL
+    'camera_secreta': 'Secret Camera',
+    'video_tutorial': '▶  Video Tutorial',
+    'btn_demo': 'Demo',
+    'convide_amigos': 'Invite your friends',
+    'copiar_codigo': 'Tap to copy your code',
+    'configuracoes': 'Settings',
+    'grupo_facebook': 'GigU Facebook Group',
+    'sorteio_semanal': 'Weekly Giveaway',
+    'gigu_conta': 'GigU Account',
+    'gigu_conta_sub': 'Financial assistant via WhatsApp',
+    'sorteio_titulo': 'Weekly Giveaway',
+    'sorteio_para_assinantes': 'Weekly Giveaway for Subscribers',
+    'aparencia_config': 'Appearance',
+    'aparencia_config_sub': 'Customize the app appearance',
+    'tema_claro': 'Light Theme',
+    'tema_escuro': 'Dark Theme',
+    'tema_label_sub': 'Switch between light and dark theme',
+    'idioma': 'Language',
+    'idioma_sub': 'Set the app language',
+    'seguranca': 'Security',
+    'seguranca_sub': 'Manage your security settings',
+    'desbloqueio': 'App unlock',
+    'desbloqueio_sub': 'Use your device unlock method',
+    'senha': 'Password',
+    'sessoes': 'Active Sessions',
+    'conta': 'Account',
+    'conta_sub': 'Manage your account',
+    'editar_perfil': 'Edit Profile',
+    'diagnostico': 'Device Diagnostics',
+    'sair': 'Sign Out',
+    'sobre': 'About',
+    'termos': 'Terms & Conditions',
+    'alterar_foto': '📷 Change photo',
+    'nome_completo': 'Full name',
+    'ajustes_copiloto': 'Copilot Settings',
+    'botao_flutuante': 'Floating Button',
+    'botao_flutuante_sub': 'Adjust the size and transparency of the floating button',
+    'tamanho': 'Size',
+    'tamanho_sub': 'Choose between small, medium or large',
+    'opacidade': 'Opacity',
+    'previa': 'Preview',
+    'tela_ganhos': 'Cherry Picker',     // <<< REGRA ESPECIAL
+    'visualizar_btn': '👁️ PREVIEW',
+    'historico_corridas': 'Ride History',
+    'historico_sub': 'Record of received rides',
+    'aplicativos': 'Apps',
+    'aplicativos_sub': 'Choose your apps',
+    'semaforo': 'Value Traffic Light',
+    'vermelho_label': '● Red for bad rides',
+    'amarelo_label': '● Yellow for average rides',
+    'verde_label': '● Green for good rides',
+    'ganho_km': 'Earnings per Km',
+    'ganho_hora': 'Earnings per Hour',
+    'nota_passageiro': 'Passenger rating',
+    'ajuda_label': '❓ HELP',
+    'ruim': 'Bad',
+    'bom': 'Good',
+    'lucro_liquido': 'Net Profit',
+    'lucro_liquido_sub': 'Calculate your cost per km to see your profit on each ride and calibrate your traffic light',
+    'calcule_lucro_btn': 'Calculate my profit and cost per Km',
+    'btn_editar': '✏️ Edit',
+    'btn_detalhes': '📊 Details',
+    'custo_por_km': '🛣️ Cost per Km',
+    'aparencia': 'Appearance',
+    'aparencia_sub': 'Customize the card and drag to reorder',
+    'selecionados': 'Selected (max. 4)',
+    'disponiveis': 'Available',
+    'posicao_cartao': 'Card Position',
+    'tema_cartao': 'Card Theme',
+    'modo_daltonico': 'Color Blind Mode',
+    'opacidade_cartao': '👁️ Card Opacity',
+    'tamanho_fonte': 'Tt Font size',
+    'duracao_cartao': '🕐 Card duration',
+    'avancado': 'Advanced',
+    'avancado_sub': 'Set advanced automations for ride offers',
+    'notif_texto': 'Text notification',
+    'notif_texto_sub': 'Ride details with quick links',
+    'notif_voz': 'Voice notification',
+    'notif_voz_sub': 'Hear the ride details',
+    'captura_auto': 'Auto Screenshot',
+    'captura_auto_sub': 'Saves a screenshot of each offer',
+    'msg_passageiro': 'Message to passenger',
+    'msg_passageiro_sub': 'Default message copied automatically',
+    'camera_titulo': 'Secret Camera',
+    'gravacoes': 'Recordings',
+    'gravacoes_sub': 'View and manage your recordings',
+    'lente': 'Lens',
+    'lente_sub': 'Set the default lens',
+    'qualidade': 'Recording quality',
+    'qualidade_sub': 'Select video quality',
+    'cortes': 'Recording cuts',
+    'cortes_sub': 'Split recording into smaller videos',
+    'tempo_limite': 'Recording time limit',
+    'tempo_limite_sub': 'Set a time limit',
+    'armazenamento': 'Storage',
+    'armazenamento_sub': 'Choose where to save recordings',
+    'calc_lucro_titulo': 'Calculate Profit and Cost per Km',
+    'vamos_comecar': "Let's start",
+    'calculando': 'Calculating numbers...',
+    'detalhes': 'Details',
+    'custo_km_label': 'Cost per Km',
+    'custo_hr_label': 'Cost per Hour',
+    'simule_ganhos': 'Simulate Higher Earnings ❓',
+    'aplicar_semaforo': 'Apply $/Km and $/Hr to Traffic Light',
+    'editar_calculo': 'Edit Calculation',
+    'resetar': '↺ RESET',
+    'info_trabalho': 'Work Information',
+    'dias_semana': 'Working days per week',
+    'horas_dia': 'Hours driven /day',
+    'km_dia': 'Km driven /day',
+    'meta_semanal': 'Weekly goal',
+    'info_veiculo': 'Vehicle Information',
+    'tipo_veiculo': 'Vehicle Type',
+    'situacao_veiculo': 'Vehicle Status',
+    'categorias': 'Categories',
+    'custos': 'Costs',
+    'combustivel': 'Fuel',
+    'tipo_combustivel': 'Fuel Type',
+    'demo_titulo': 'Demo',
+    'demo_hint': 'Tap a ride to see GigU analysis',
+    'historico_titulo': 'Ride History',
+    'todos_apps': 'All Apps',
+    'hoje': 'Today',
+    'tudo': 'All',
+    'camera_fab': 'Camera',
+    'ganhos_fab': 'Earnings',
+    'minhas_gravacoes': 'My Recordings',
+    'historico_corridas_fab': 'Ride History',
+    'entenda_indicadores': 'Understand the Indicators',
+    'distancias_info': 'Distances and times include the pickup.',
+    'confirme_valores': 'Confirm suggested values',
+
+    // Histórico
+    'semana': 'Week',
+    'mes': 'Month',
+    'registros': 'records',
+    'nenhuma_corrida_periodo': 'No rides in this period',
+    'filtro_dica': 'Try another date or app filter.',
+    // Lucro Líquido - intro
+    'lucro_mensal_label': 'Monthly Profit',
+    'vamos_comecar': "Let's start",
+    'leva_menos': 'Takes less than 5 minutes',
+    'analise_custos': 'Analyze your costs and discover how much you are really earning!',
+    'bullet1': 'See profit details for each ride on the card and in ride history',
+    'bullet2': 'Easily apply suggested /km and /hr values to the Value Traffic Light',
+    'bullet3': 'Simulate higher earnings to test bolder goals',
+    // Wizard steps
+    'q_dias': 'How many days do you work per week?',
+    'q_horas': 'How many hours do you drive per day?',
+    'q_horas_hint': 'Only count driving time. Exclude breaks like lunch, refueling or waiting.',
+    'q_km': 'How many km do you drive per day?',
+    'q_meta': 'What is your weekly goal?',
+    'q_veiculo': 'What type of vehicle do you drive?',
+    'v_carro': 'Car', 'v_moto': 'Motorcycle', 'v_bicicleta': 'Bicycle',
+    'q_categ': 'Which categories do you work with?',
+    'q_status': 'What is your vehicle status?',
+    's_financiado': 'Financed', 's_proprio': 'Owned', 's_alugado': 'Rented', 's_aluguel_privado': 'Private Rental',
+    'q_financ_aluguel': 'How much do you pay for vehicle rental per month?',
+    'q_financ': 'How much do you pay for vehicle financing per month?',
+    'q_manut': 'How much do you spend per month on vehicle maintenance?',
+    'q_seguro': 'How much does your vehicle insurance cost per month?',
+    'q_outros': 'Do you have other monthly costs to add?',
+    'q_outros_hint': 'E.g.: car wash, food, tolls, etc.',
+    'q_ipva': 'How much do you pay per year for registration, licensing and fees?',
+    'q_comb': 'What type of fuel does your vehicle use?',
+    'c_gasolina': 'Gasoline', 'c_etanol': 'Ethanol', 'c_gnv': 'CNG', 'c_eletrico': 'Electric', 'c_nenhum': 'None',
+    'q_auto_eletrico': 'How many km do you get on a full charge?',
+    'q_auto': 'What is your vehicle fuel efficiency?',
+    'q_preco_gnv': 'What is the average price you pay per m³ of CNG?',
+    'q_preco_eletrico': 'How much do you pay per kWh?',
+    'q_preco': 'What is the average price per liter of fuel you pay?',
+    'calcular': 'Calculate ›',
+    'proximo': 'Next ›',
+    'voltar': '‹ Back',
+    'horas': 'hours',
+    'por_mes': '/month',
+  
+    'lucro_diario': 'Daily Profit',
+    'lucro_semanal': 'Weekly Profit',
+    'lucro_mensal_r': 'Monthly Profit',
+    'custos_diarios': 'Daily Costs',
+    'custos_semanais': 'Weekly Costs',
+    'custos_mensais': 'Monthly Costs',
+    'custo_km': 'Cost per Km',
+    'custo_hora': 'Cost per Hour',
+    'custo_combustivel': 'Fuel',
+    'custo_financiamento': 'Financing',
+    'custo_manutencao': 'Maintenance',
+    'custo_seguro': 'Vehicle Insurance',
+    'custo_taxas': 'Annual Fees',
+    'custo_outros': 'Other Costs',
+    'periodo_dia': 'DAY',
+    'periodo_semana': 'WEEK',
+    'periodo_mes': 'MONTH',
+  },
+
+  es: {
+    'ajuda': '? CENTRO DE AYUDA',
+    'assinatura_ativa': 'Suscripción Activa',
+    'encerra_em': 'Vence: vie, 6 de ene de 2226',
+    'salvar': 'Guardar',
+    'cancelar': 'Cancelar',
+    'confirmar': 'Confirmar',
+    'voltar': '‹ Volver',
+    'proximo': 'Siguiente ›',
+    'copiloto': 'Copiloto',
+    'copiloto_sub': 'Botón flotante activo',
+    'calculo_ganhos': 'Cálculo de Ganancias',   // <<< REGRA ESPECIAL
+    'camera_secreta': 'Cámara Secreta',
+    'video_tutorial': '▶  Video Tutorial',
+    'btn_demo': 'Demo',
+    'convide_amigos': 'Invita a tus amigos',
+    'copiar_codigo': 'Toca para copiar tu código',
+    'configuracoes': 'Configuración',
+    'grupo_facebook': 'Grupo de Facebook de GigU',
+    'sorteio_semanal': 'Sorteo Semanal',
+    'gigu_conta': 'GigU Cuenta',
+    'gigu_conta_sub': 'Asistente financiero por WhatsApp',
+    'sorteio_titulo': 'Sorteo Semanal',
+    'sorteio_para_assinantes': 'Sorteo Semanal para Suscriptores',
+    'aparencia_config': 'Apariencia',
+    'aparencia_config_sub': 'Personaliza la apariencia de la app',
+    'tema_claro': 'Tema Claro',
+    'tema_escuro': 'Tema Oscuro',
+    'tema_label_sub': 'Cambiar entre tema claro y oscuro',
+    'idioma': 'Idioma',
+    'idioma_sub': 'Define el idioma de la app',
+    'seguranca': 'Seguridad',
+    'seguranca_sub': 'Administra tu configuración de seguridad',
+    'desbloqueio': 'Desbloqueo de la app',
+    'desbloqueio_sub': 'Usa el método de desbloqueo de tu dispositivo',
+    'senha': 'Contraseña',
+    'sessoes': 'Sesiones Activas',
+    'conta': 'Cuenta',
+    'conta_sub': 'Administra tu cuenta',
+    'editar_perfil': 'Editar Perfil',
+    'diagnostico': 'Diagnóstico del Dispositivo',
+    'sair': 'Cerrar sesión',
+    'sobre': 'Acerca de',
+    'termos': 'Términos y Condiciones',
+    'alterar_foto': '📷 Cambiar foto',
+    'nome_completo': 'Nombre completo',
+    'ajustes_copiloto': 'Ajustes del Copiloto',
+    'botao_flutuante': 'Botón Flotante',
+    'botao_flutuante_sub': 'Ajusta el tamaño y la transparencia del botón flotante',
+    'tamanho': 'Tamaño',
+    'tamanho_sub': 'Elige entre pequeño, mediano o grande',
+    'opacidade': 'Opacidad',
+    'previa': 'Vista previa',
+    'tela_ganhos': 'Cálculo de Ganancias',     // <<< REGRA ESPECIAL
+    'visualizar_btn': '👁️ VISUALIZAR',
+    'historico_corridas': 'Historial de Viajes',
+    'historico_sub': 'Registro de viajes recibidos',
+    'aplicativos': 'Aplicaciones',
+    'aplicativos_sub': 'Elige las apps',
+    'semaforo': 'Semáforo de Valores',
+    'vermelho_label': '● Rojo para viajes malos',
+    'amarelo_label': '● Amarillo para viajes intermedios',
+    'verde_label': '● Verde para viajes buenos',
+    'ganho_km': 'Ganancia por Km',
+    'ganho_hora': 'Ganancia por Hora',
+    'nota_passageiro': 'Calificación del pasajero',
+    'ajuda_label': '❓ AYUDA',
+    'ruim': 'Malo',
+    'bom': 'Bueno',
+    'lucro_liquido': 'Ganancia Neta',
+    'lucro_liquido_sub': 'Calcula tu costo por km para ver tu ganancia en cada viaje y calibrar tu semáforo',
+    'calcule_lucro_btn': 'Calcular mi ganancia y costo por Km',
+    'btn_editar': '✏️ Editar',
+    'btn_detalhes': '📊 Detalles',
+    'custo_por_km': '🛣️ Costo por Km',
+    'aparencia': 'Apariencia',
+    'aparencia_sub': 'Personaliza la tarjeta y arrastra para reordenar',
+    'selecionados': 'Seleccionados (máx. 4)',
+    'disponiveis': 'Disponibles',
+    'posicao_cartao': 'Posición de la Tarjeta',
+    'tema_cartao': 'Tema de la Tarjeta',
+    'modo_daltonico': 'Modo Daltónico',
+    'opacidade_cartao': '👁️ Opacidad de la Tarjeta',
+    'tamanho_fonte': 'Tt Tamaño de fuente',
+    'duracao_cartao': '🕐 Duración de la tarjeta',
+    'avancado': 'Avanzado',
+    'avancado_sub': 'Define automatizaciones avanzadas para ofertas de viaje',
+    'notif_texto': 'Notificación de texto',
+    'notif_texto_sub': 'Detalles del viaje con enlaces rápidos',
+    'notif_voz': 'Notificación de voz',
+    'notif_voz_sub': 'Escucha los detalles del viaje',
+    'captura_auto': 'Captura de Pantalla Automática',
+    'captura_auto_sub': 'Guarda una captura de cada oferta',
+    'msg_passageiro': 'Mensaje al pasajero',
+    'msg_passageiro_sub': 'Mensaje predeterminado copiado automáticamente',
+    'camera_titulo': 'Cámara Secreta',
+    'gravacoes': 'Grabaciones',
+    'gravacoes_sub': 'Ver y administrar tus grabaciones',
+    'lente': 'Lente',
+    'lente_sub': 'Define la lente predeterminada',
+    'qualidade': 'Calidad de grabación',
+    'qualidade_sub': 'Selecciona la calidad del video',
+    'cortes': 'Cortes de grabación',
+    'cortes_sub': 'Divide la grabación en videos más pequeños',
+    'tempo_limite': 'Límite de tiempo de grabación',
+    'tempo_limite_sub': 'Define un límite de tiempo',
+    'armazenamento': 'Almacenamiento',
+    'armazenamento_sub': 'Elige dónde guardar las grabaciones',
+    'calc_lucro_titulo': 'Calcular Ganancia y Costo por Km',
+    'vamos_comecar': 'Vamos a empezar',
+    'calculando': 'Calculando los números...',
+    'detalhes': 'Detalles',
+    'custo_km_label': 'Costo por Km',
+    'custo_hr_label': 'Costo por Hora',
+    'simule_ganhos': 'Simular Ganancias Mayores ❓',
+    'aplicar_semaforo': 'Aplicar $/Km y $/Hr al Semáforo',
+    'editar_calculo': 'Editar Cálculo',
+    'resetar': '↺ RESTABLECER',
+    'info_trabalho': 'Información de Trabajo',
+    'dias_semana': 'Días trabajados por semana',
+    'horas_dia': 'Horas conducidas /día',
+    'km_dia': 'Km conducidos /día',
+    'meta_semanal': 'Meta semanal',
+    'info_veiculo': 'Información del Vehículo',
+    'tipo_veiculo': 'Tipo de Vehículo',
+    'situacao_veiculo': 'Estado del Vehículo',
+    'categorias': 'Categorías',
+    'custos': 'Costos',
+    'combustivel': 'Combustible',
+    'tipo_combustivel': 'Tipo de Combustible',
+    'demo_titulo': 'Demo',
+    'demo_hint': 'Toca un viaje para ver el análisis GigU',
+    'historico_titulo': 'Historial de Viajes',
+    'todos_apps': 'Todas las Apps',
+    'hoje': 'Hoy',
+    'tudo': 'Todo',
+    'camera_fab': 'Cámara',
+    'ganhos_fab': 'Ganancias',
+    'minhas_gravacoes': 'Mis Grabaciones',
+    'historico_corridas_fab': 'Historial de Viajes',
+    'entenda_indicadores': 'Entiende los Indicadores',
+    'distancias_info': 'Las distancias y tiempos incluyen el desplazamiento.',
+    'confirme_valores': 'Confirma los valores sugeridos',
+// Histórico
+    'semana': 'Semana',
+    'mes': 'Mes',
+    'registros': 'registros',
+    'nenhuma_corrida_periodo': 'Sin viajes en este período',
+    'filtro_dica': 'Prueba otro filtro de fecha o app.',
+    // Lucro Líquido - intro
+    'lucro_mensal_label': 'Ganancia Mensual',
+    'vamos_comecar': 'Comencemos',
+    'leva_menos': 'Toma menos de 5 minutos',
+    'analise_custos': '¡Analiza tus costos y descubre cuánto estás ganando realmente!',
+    'bullet1': 'Ver detalles de ganancia de cada viaje en la tarjeta y en el historial',
+    'bullet2': 'Aplica fácilmente los valores /km y /hr sugeridos al Semáforo de Valores',
+    'bullet3': 'Simula ganancias mayores para probar metas más ambiciosas',
+    // Wizard steps
+    'q_dias': '¿Cuántos días trabajas por semana?',
+    'q_horas': '¿Cuántas horas conduces por día?',
+    'q_horas_hint': 'Solo cuenta el tiempo manejando. Excluye pausas como almuerzo, combustible o espera.',
+    'q_km': '¿Cuántos km conduces por día?',
+    'q_meta': '¿Cuál es tu meta semanal?',
+    'q_veiculo': '¿Qué tipo de vehículo conduces?',
+    'v_carro': 'Auto', 'v_moto': 'Moto', 'v_bicicleta': 'Bicicleta',
+    'q_categ': '¿Con qué categorías trabajas?',
+    'q_status': '¿Cuál es el estado de tu vehículo?',
+    's_financiado': 'Financiado', 's_proprio': 'Propio', 's_alugado': 'Alquilado', 's_aluguel_privado': 'Alquiler Privado',
+    'q_financ_aluguel': '¿Cuánto pagas por el alquiler del vehículo al mes?',
+    'q_financ': '¿Cuánto pagas por el financiamiento del vehículo al mes?',
+    'q_manut': '¿Cuánto gastas al mes en mantenimiento del vehículo?',
+    'q_seguro': '¿Cuánto cuesta tu seguro vehicular mensual?',
+    'q_outros': '¿Tienes otros costos mensuales que agregar?',
+    'q_outros_hint': 'Ej: lavado, comida, peajes, etc.',
+    'q_ipva': '¿Cuánto pagas por año en registro y licenciamiento?',
+    'q_comb': '¿Qué tipo de combustible usa tu vehículo?',
+    'c_gasolina': 'Gasolina', 'c_etanol': 'Etanol', 'c_gnv': 'GNV', 'c_eletrico': 'Eléctrico', 'c_nenhum': 'Ninguno',
+    'q_auto_eletrico': '¿Cuántos km recorres con la batería llena?',
+    'q_auto': '¿Cuál es la autonomía de combustible de tu vehículo?',
+    'q_preco_gnv': '¿Cuál es el precio promedio que pagas por m³ de GNV?',
+    'q_preco_eletrico': '¿Cuánto pagas por kWh?',
+    'q_preco': '¿Cuál es el precio promedio por litro de combustible que pagas?',
+    'calcular': 'Calcular ›',
+    'proximo': 'Siguiente ›',
+    'voltar': '‹ Atrás',
+    'horas': 'horas',
+    'por_mes': '/mes',
+  
+    'lucro_diario': 'Ganancia Diaria',
+    'lucro_semanal': 'Ganancia Semanal',
+    'lucro_mensal_r': 'Ganancia Mensual',
+    'custos_diarios': 'Costos Diarios',
+    'custos_semanais': 'Costos Semanales',
+    'custos_mensais': 'Costos Mensuales',
+    'custo_km': 'Costo por Km',
+    'custo_hora': 'Costo por Hora',
+    'custo_combustivel': 'Combustible',
+    'custo_financiamento': 'Financiamiento',
+    'custo_manutencao': 'Mantenimiento',
+    'custo_seguro': 'Seguro Vehicular',
+    'custo_taxas': 'Tasas Anuales',
+    'custo_outros': 'Otros Costos',
+    'periodo_dia': 'DÍA',
+    'periodo_semana': 'SEMANA',
+    'periodo_mes': 'MES',
+  }
+};
+
+function t(key) {
+  if(typeof i18n==='undefined') return key;
+  var lang = currentLang || 'pt';
+  return (i18n[lang] && i18n[lang][key]) || (i18n['pt'] && i18n['pt'][key]) || key;
 }
 
 
