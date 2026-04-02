@@ -331,11 +331,11 @@ input[type=range]{width:100%;accent-color:#FF5900;}
   <div class="sub-banner"><div><div style="font-size:14px;font-weight:700;color:#FF5900;letter-spacing:0.3px;" data-i18n="assinatura_ativa">Assinatura Ativa</div><div style="font-size:12px;color:#FF5900;margin-top:2px;opacity:0.8;" data-i18n="encerra_em">Encerra em: sex, 6 de jan de 2226</div></div><span style="font-size:18px;color:#FF5900;">›</span></div>
   <div class="sa">
     <div class="module-card card-bg">
-      <div class="mr"><div class="mi"><div class="mn txt-p"><span data-i18n="copiloto">Copiloto</span></div><div class="ms txt-s"><span data-i18n="copiloto_sub"><span data-i18n="copiloto_sub">Botão flutuante ativo</span></span></div></div><span class="gi" onclick="go('v-copiloto')">⚙️</span><div class="tg on" id="tg-copiloto" onclick="toggleCopiloto()"><div class="tt"></div></div></div>
+      <div class="mr"><div class="mi"><div class="mn txt-p"><span data-i18n="copiloto">Copiloto</span></div><div class="ms txt-s"><span id="copiloto-sub-txt" data-i18n="copiloto_sub">Botão flutuante ativo</span></div></div><span class="gi" onclick="go('v-copiloto')">⚙️</span><div class="tg on" id="tg-copiloto" onclick="toggleCopiloto()"><div class="tt"></div></div></div>
       <div class="mr divr" style="border-top:1px solid transparent;"><div class="mi"><div class="mn txt-p"><span data-i18n="calculo_ganhos">Cálculo de Ganhos</span></div><div class="ab" id="home-app-badges"></div></div><span class="gi" onclick="go('v-ganho')">⚙️</span><div class="tg on" id="tg-ganhos" onclick="toggleGanhos()"><div class="tt"></div></div></div>
       <div class="mr divr" style="border-top:1px solid transparent;"><div class="mi"><div class="mn txt-s"><span data-i18n="camera_secreta">Câmera Secreta</span></div></div><span class="gi" onclick="go('v-camera')">⚙️</span><div class="tg off" id="tg-camera" onclick="toggleEl(this)"><div class="tt"></div></div></div>
     </div>
-    <div class="tbtn"><span data-i18n="video_tutorial">▶  Vídeo Tutorial</span></div>
+    <div class="tbtn" onclick="openVideoModal()"><span data-i18n="video_tutorial">▶  Vídeo Tutorial</span></div>
     <div style="background:white;border:2px solid #FF5900;border-radius:12px;padding:13px;text-align:center;font-size:15px;font-weight:800;color:#FF5900;margin-top:8px;cursor:pointer;letter-spacing:0.3px;" onclick="openDemo()">Demo</div>
     <div style="text-align:center;font-size:11px;margin-top:8px;" class="txt-s">v1.1.93 · 9U83A</div>
   </div>
@@ -1431,10 +1431,24 @@ function toggleCopiloto() {
   var ligar = tg.classList.contains('off'); // vai ligar
   tg.classList.toggle('on', ligar);
   tg.classList.toggle('off', !ligar);
+  // Atualizar texto do subtítulo
+  _updateCopilotoSub(ligar);
+  // Mostrar/esconder FAB
+  var fab = document.getElementById('fab-global');
+  if (fab) fab.style.display = ligar ? 'flex' : 'none';
   // Se DESLIGOU o copiloto → desliga também o cálculo de ganhos
   if (!ligar) {
     _setGanhos(false);
-    showToast('Copiloto desligado — Cálculo de Ganhos desligado');
+    showToast(t('copiloto_desligado_msg') || 'Copiloto desligado');
+  }
+}
+
+function _updateCopilotoSub(copOn) {
+  // Usar id fixo para não perder referência ao trocar data-i18n
+  var el = document.getElementById('copiloto-sub-txt');
+  if (el) {
+    el.textContent = copOn ? t('copiloto_sub') : t('copiloto_sub_off');
+    el.setAttribute('data-i18n', copOn ? 'copiloto_sub' : 'copiloto_sub_off');
   }
 }
 
@@ -2544,6 +2558,7 @@ var i18n = {
     // Home
     'copiloto': 'Copiloto',
     'copiloto_sub': 'Botão flutuante ativo',
+    'copiloto_sub_off': 'Ative para utilizar os recursos',
     'calculo_ganhos': 'Cálculo de Ganhos',
     'camera_secreta': 'Câmera Secreta',
     'video_tutorial': '▶  Vídeo Tutorial',
@@ -2765,6 +2780,7 @@ var i18n = {
     'proximo': 'Next ›',
     'copiloto': 'Copilot',
     'copiloto_sub': 'Floating button active',
+    'copiloto_sub_off': 'Activate to use the features',
     'calculo_ganhos': 'Cherry Picker',   // <<< REGRA ESPECIAL
     'camera_secreta': 'Secret Camera',
     'video_tutorial': '▶  Video Tutorial',
@@ -2973,6 +2989,7 @@ var i18n = {
     'proximo': 'Siguiente ›',
     'copiloto': 'Copiloto',
     'copiloto_sub': 'Botón flotante activo',
+    'copiloto_sub_off': 'Activa para usar las funciones',
     'calculo_ganhos': 'Cálculo de Ganancias',   // <<< REGRA ESPECIAL
     'camera_secreta': 'Cámara Secreta',
     'video_tutorial': '▶  Video Tutorial',
@@ -3178,6 +3195,45 @@ function t(key) {
 
 
 
+
+
+// ══ VÍDEO TUTORIAL ══════════════════════════════════════════
+var VIDEO_YT_ID = 'wpl13X_99Ms';
+
+function openVideoModal(){
+  var overlay = document.getElementById('video-modal-overlay');
+  if(!overlay) return;
+  // Mostrar thumbnail (funciona sempre), iframe oculto
+  document.getElementById('yt-thumb-wrap').style.display = 'block';
+  document.getElementById('yt-iframe').style.display = 'none';
+  document.getElementById('yt-iframe').src = '';
+  overlay.style.display = 'flex';
+}
+
+function tryLoadIframe(){
+  // Em file:// não funciona — abrir YouTube diretamente
+  if(window.location.protocol === 'file:'){
+    window.open('https://www.youtube.com/watch?v=' + VIDEO_YT_ID, '_blank');
+    return;
+  }
+  // Em HTTPS: carregar iframe com autoplay
+  var thumb  = document.getElementById('yt-thumb-wrap');
+  var iframe = document.getElementById('yt-iframe');
+  iframe.src = 'https://www.youtube-nocookie.com/embed/' + VIDEO_YT_ID +
+               '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+  thumb.style.display  = 'none';
+  iframe.style.display = 'block';
+}
+
+function closeVideoModal(e){
+  if(e && e.target !== document.getElementById('video-modal-overlay')) return;
+  var overlay = document.getElementById('video-modal-overlay');
+  var iframe  = document.getElementById('yt-iframe');
+  if(overlay) overlay.style.display = 'none';
+  if(iframe)  iframe.src = '';
+}
+
+
 // ── INIT ──────────────────────────────────────────────────
 setTimeout(()=>{
   document.querySelectorAll('.dth').forEach(setupThumb);
@@ -3185,5 +3241,45 @@ setTimeout(()=>{
   setPos('Centro');applyAppTheme();updateAvatarDisplay();updateFab();
 },500);
 </script>
+
+<!-- ══ MODAL VÍDEO ══════════════════════════════════════════ -->
+<div id="video-modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:99999;align-items:center;justify-content:center;" onclick="closeVideoModal(event)">
+  <div style="position:relative;width:min(96vw,500px);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.8);" onclick="event.stopPropagation()">
+    <!-- Header -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#111;">
+      <span style="color:white;font-size:13px;font-weight:700;opacity:0.8;">▶ Vídeo Tutorial GigU</span>
+      <button onclick="closeVideoModal()" style="background:rgba(255,255,255,0.15);border:none;border-radius:50%;width:28px;height:28px;color:white;font-size:14px;cursor:pointer;">✕</button>
+    </div>
+    <!-- Área do player -->
+    <div id="yt-player-area" style="position:relative;background:#000;">
+      <!-- Thumbnail clicável (carrega em file:// e em HTTPS) -->
+      <div id="yt-thumb-wrap" style="position:relative;cursor:pointer;" onclick="tryLoadIframe()">
+        <img id="yt-thumb"
+          src="https://img.youtube.com/vi/wpl13X_99Ms/hqdefault.jpg"
+          style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;"
+          onerror="this.style.background='#1a1a1a';this.style.height='200px';">
+        <!-- Botão play sobre a thumbnail -->
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.3);">
+          <div style="width:64px;height:64px;background:rgba(255,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.5);">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="white" style="margin-left:4px;"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+      <!-- iframe (oculto até clicar play, só funciona em HTTPS) -->
+      <iframe id="yt-iframe"
+        style="display:none;width:100%;aspect-ratio:16/9;border:none;"
+        src=""
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <!-- Footer -->
+    <div style="background:#111;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;">
+      <span style="color:rgba(255,255,255,0.5);font-size:11px;">GigU App</span>
+      <button onclick="window.open('https://www.youtube.com/watch?v=wpl13X_99Ms','_blank')" style="background:none;border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:5px 12px;color:rgba(255,255,255,0.7);font-size:11px;cursor:pointer;">Abrir no YouTube ↗</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
